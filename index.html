@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>AngelsBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AngelsBlog">
+<meta property="og:url" content="https://angelkawaii2.github.io/blog/index.html">
+<meta property="og:site_name" content="AngelsBlog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="AngelAme">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="AngelsBlog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">AngelsBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://angelkawaii2.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2024.12.HDR探索" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/12/04/2024.12.HDR%E6%8E%A2%E7%B4%A2/" class="article-date">
+  <time class="dt-published" datetime="2024-12-04T20:00:00.000Z" itemprop="datePublished">2024-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/12/04/2024.12.HDR%E6%8E%A2%E7%B4%A2/">2024.12 HDR 照片兼容性探索</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="2024-12-HDR-照片兼容性探索"><a href="#2024-12-HDR-照片兼容性探索" class="headerlink" title="2024.12 HDR 照片兼容性探索"></a>2024.12 HDR 照片兼容性探索</h1><p>Lightroom 在10月更新 14.0 后改进了 HDR 照片工作流，支持在 Library 视图中直接预览 HDR 效果；增加 HDR 输出格式下的 “兼容模式”，此选项勾选后，输出的原生 HDR 照片将变为 SDR+GainMap 格式。</p>
+<h3 id="测试平台："><a href="#测试平台：" class="headerlink" title="测试平台："></a>测试平台：</h3><ul>
+<li>Windows 11 24H2 26100.2454，系统照片App</li>
+<li>iPhone 15 Pro （iOS 18.1.1），系统照片和文件APP</li>
+<li>iPad Pro 2018 （iPadOS 18.1.1）</li>
+</ul>
+<h3 id="文件类型和平台表现："><a href="#文件类型和平台表现：" class="headerlink" title="文件类型和平台表现："></a>文件类型和平台表现：</h3><h4 id="JPG："><a href="#JPG：" class="headerlink" title="JPG："></a>JPG：</h4><p>无变化，均为 8-bit JPG + GainMap</p>
+<h4 id="兼容模式-AVIF："><a href="#兼容模式-AVIF：" class="headerlink" title="兼容模式-AVIF："></a>兼容模式-AVIF：</h4><p>LR可能将照片输出为 <code>QuickTime &#39;nclc&#39; Video(9,1,9)</code> 或 <code>Dispaly-P3</code>，原因未知。</p>
+<p>iOS：</p>
+<ul>
+<li>Metapho 无法识别 HDR 类型</li>
+<li>分享会被 iOS 自动转换为 8-bit SDR jpg 、丢失所有HDR信息。</li>
+<li>exif中会被系统添加 <code>&#123;MakerApple&#125;</code> <code>id:22</code> 属性，内容为一串随机字符串。</li>
+</ul>
+<h4 id="原生HDR-AVIF："><a href="#原生HDR-AVIF：" class="headerlink" title="原生HDR-AVIF："></a>原生HDR-AVIF：</h4><p>iOS：</p>
+<ul>
+<li>HDR P3 或 Rec.2100 均正常显示，HDR 类型为 ISO HDR</li>
+<li>相同色彩范围(P3)和映射曲线(PQ)的不同照片，在相册中分享可能会被转换为 8-bit Display P3 JPG，类型识别为 Gain Map HDR，原因未知。</li>
+<li>照片点击编辑后，画面会被整体大幅提亮，GainMap方案 照片无此问题。原因未知，猜测和 PQ 映射相关？</li>
+<li>对更高规格照片（例：<code>12-bit Rec.ITU-R.BT.2100 PQ</code> ），相册分享时均会转换为8-bit Display P3 Gainmap JPG 格式。</li>
+</ul>
+<h3 id="平台表现："><a href="#平台表现：" class="headerlink" title="平台表现："></a>平台表现：</h3><h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><ul>
+<li>照片App：无法显示 GainMap (JPG、avif) 方案的 HDR。</li>
+<li>Explorer：原生 HDR 照片 (avif) 的缩略图均严重过曝，Gainmap 方案正常。</li>
+</ul>
+<h4 id="iOS："><a href="#iOS：" class="headerlink" title="iOS："></a>iOS：</h4><ul>
+<li>在相册中使用分享功能，系统可能会自动对照片进行下变换。</li>
+<li>Gainmap HDR 使用快捷指令转换为heif格式后会丢失 Gainmap ，原生 HDR 正常，但奇怪的是AVIF下点击编辑会变亮，转换后的heic点击也会变亮。此方式转换后的HEIC类型为ISO HDR，且体积比原来的AVIF还大。</li>
+<li>照片观感与系统亮度高度相关，50%亮度下，除原生 HDR 格式的高光较为明显外，总体观感基本相似，但亮度高于80%左右时，可观测到 GainMap 照片出现暗部整体提亮，且高光被大幅抑制，原生 HDR 格式则更贴近原始的照片明暗关系。</li>
+<li>原生HDR格式照片点击编辑后，显示的映射曲线似乎就不会跟系统亮度挂钩，而是改变画面整体的亮暗。</li>
+</ul>
+<h4 id="iPadOS："><a href="#iPadOS：" class="headerlink" title="iPadOS："></a>iPadOS：</h4><ul>
+<li>无论原生HDR格式还是GainMap方案，亮度均会对画面整体进行调整，任何亮度下，都是Gainmap方案的照片暗部更亮高光更暗。</li>
+</ul>
+<hr>
+<h3 id="文件体积参考："><a href="#文件体积参考：" class="headerlink" title="文件体积参考："></a>文件体积参考：</h3><h4 id="图片A"><a href="#图片A" class="headerlink" title="图片A"></a>图片A</h4><ul>
+<li>AVIF (HDR) ：1.7MB</li>
+<li>兼容AVIF (SDR +Gainmap) ：2.7MB</li>
+<li>JPG：9MB</li>
+</ul>
+<h4 id="图片B"><a href="#图片B" class="headerlink" title="图片B"></a>图片B</h4><ul>
+<li>AVIF：1MB</li>
+<li>兼容AVIF：3MB</li>
+<li>JPG：12MB</li>
+</ul>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>总体而言，iOS 相册能较为正确的显示上述几种格式的 HDR 照片，而 Windows 目前仅支持原生 HDR 格式的照片。三种格式的直方图使用 Gainmap demo app 打开时基本一致，但 iOS 在高亮度下显示效果不一致的问题，可能和映射曲线有一定关系。</p>
+<p>在 HDR 下观感最好的依然是原生 HDR 格式照片，带有 GainMap 的 JPG 文件太大、而 GainMap AVIF 兼容性在各个平台上均表现不佳。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/12/04/2024.12.HDR%E6%8E%A2%E7%B4%A2/" data-id="cm49vqiv30000bqqj9pmseif8" data-title="2024.12 HDR 照片兼容性探索" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HDR/" rel="tag">HDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/" rel="tag">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Oppo Find X7 Ultra 影像简评" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/19/Oppo%20Find%20X7%20Ultra%20%E5%BD%B1%E5%83%8F%E7%AE%80%E8%AF%84/" class="article-date">
+  <time class="dt-published" datetime="2024-08-19T10:00:00.000Z" itemprop="datePublished">2024-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/19/Oppo%20Find%20X7%20Ultra%20%E5%BD%B1%E5%83%8F%E7%AE%80%E8%AF%84/">OPPO Find X7 Ultra 影像简评</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="OPPO-Find-X7-Ultra-影像简评"><a href="#OPPO-Find-X7-Ultra-影像简评" class="headerlink" title="OPPO Find X7 Ultra 影像简评"></a>OPPO Find X7 Ultra 影像简评</h1><p>20240819</p>
+<p>由于小米对老机型管生不管养，问题反馈了一年就是装死不处理，于是最近换成了 X7U，本来 X7U 年初发布时口碑并不好，但经过几次软件更新后大幅增强了影像体验。今天主要聊聊影像的部分。</p>
+<p>iPhone 虽然对 HDR 的支持好，但照片是众所周知的烂。我喜欢 HDR 的显示效果，但又喜欢“相机”直出的拍照质感，也就是没有手机数码照片那些令人作呕的涂抹、锐化、压高光提暗部，真正的“光学味”。</p>
+<p>原先虽然购买了相机，但经过几次出门发现就算只带一个50定，携带相机也会严重干扰自身的行动能力，需要额外携带大量的备用电池、充电器。同时由于相机的侵略感极强，容易引起路人警惕，在进入一些场合时经常会产生误会，并且在这个“全民抓间谍”的时代也可能引起麻烦。于是只能考虑用安卓拍照，再导入回iPhone享受原汁原味的 HDR 照片。</p>
+<p>原先用13U想要完全规避算法影响，只能用专业模式拍Raw。但小米的专业模式存在着诸多问题，例如直方图不准、点测光不能用、检测到人脸强行提亮、最近对焦距离不一致、水平仪不精确、甚至dng照片不带exif信息等等严重影响体验的问题。这些问题我从13U发布那一阵拿到手机后，就开始一直联系官方反馈。抓log拍复现视频，结果反馈了整整一年多，到14系列都出来了，小米把我反馈的所有问题和功能全都实装给了新机型，然后把我所有反馈的这些，能100%复现的问题回复一句“反馈的人不多，要3个人同时反馈才处理”、“请等新版本发布更新后再看看”；不仅不修复旧机型的问题，还把刚发布时支持的功能给砍掉了。后面甚至红米千元机都有的简单功能（调个曝光补偿），就是不给上代旗舰。既然如此那我也没什么能说的，用户花六七千的手机就这种维护态度，谁爱用谁用去吧。</p>
+<p>为了让照片在 iOS 设备中有 HDR 效果（安卓也没几家支持 ISO HDR GainMap），每次就得把照片先导入到PC，然后运行一个用来补充元数据的自制py脚本，把所有照片预处理之后，再用LR一张张处理，最后转换格式导入iPhone。通常出门一天拍的照片就得花近两三个小时处理，对原本就不多的精力增加了额外挑战。</p>
+<p>言归正传，由于安卓机子主要用来拍照，并不是日常使用（毕竟内置反诈），所以主要聊聊拍照。</p>
+<p>之所以换 OPPO 而不是别家，是因为受到了两颗皮蛋的推荐。事实上也没有令我失望， OPPO 给几乎所有主要的拍照模式都支持了ISO HDR GainMap（ HDR 照片（就是iPhone照片看着“很亮”的效果））。</p>
+<p>因此，拍摄的照片可以直接导入苹果设备上进行 HDR 预览，这是其他几家厂商暂时还无法做到的。（小米从14 Ultra之后的机型虽然部分支持，但是原片已经是受到了手机算法的强烈影响，而且徕卡经典有点阴间，一些场景并不适合。以及考虑到上述维护原因，我也不愿意再用小米了。）</p>
+<p>我认为 OPPO 对于拍照有一些独特的想法值得其他厂商深入学习。<br>首先，OPPO 将原先的【专业模式】重命名为【大师模式】，至少在名字上不会吓跑普通用户。<br>并且O还给大师模式加了两个子模式，一个 Auto，一个 Pro。只有 Pro 模式才有完全的手动权限，普通用户就算不懂相机，用 Auto 模式也没有额外的学习成本。<br>目前绝大部分普通用户都觉得照片要“锐”、对比度要“高”、能把黑夜拍成白天，才是拍照“清楚”。这也就导致了厂商在过去近10年时间，将手机拍照往这方面进行调教以满足普通用户，反过来这又影响了用户的审美。近两年各家开始尝试转变赛道，与传统相机厂商联合，给照片套上不同的“滤镜”，以风格化作为卖点。小米的徕卡，Vivo的蔡司，etc。OPPO 所谓的大师模式，特点则是有着和其他厂商截然不同的算法。 OPPO 尝试去除掉为讨好普通用户而刻意增加的数码痕迹，尝试将照片制作成“相机直出”的风格。大师模式并非完全没有算法，只是 OPPO 处理成“看似”没有算法，毕竟实际相机拍摄的照片也是需要一些处理才能看。</p>
+<p>大师模式下算法会克制不少，由于有了 HDR ，高光也不需要强烈压缩了，jpg下有约+0.5ev~2ev的 HDR 部分，dng则能拉回约3.5EV的高光，表现还是不错的。<del>在大光比的环境下，也会适度进行 HDR 处理，避免画面出现大片死黑或者严重过曝，总的来说我认为此模式可以常驻使用。</del> 在大光比环境下， HDR 处理强度非常低，并且高光容易泛白，这点是不如普通模式的 HDR 强度的。</p>
+<p>Raw 模式和 Raw max 模式则有一些区别，Raw 模式也并非是像小米真正的Raw，还是有部分降噪算法参与。Raw max就是各家的堆栈方案了，但和小米的 UltraRaw 不同，RawMax 并不会对高光或者暗部有额外的处理，在暗光下能提升不少细节。不过 Raw max下只能使用原生焦段，而Raw可以无极变焦。<br>以及 Raw 照片在lr中解码的表现与机内风格不太一致（手机里看和jpg没区别，但是在LR里看就和相机一样是线性的），所以在需要宽容度的场景下使用 Raw 会更加合适一些。</p>
+<p>优点：</p>
+<ul>
+<li>照片&#x2F;大师&#x2F;人像模式均支持 ISO HDR GainMap 照片规格</li>
+<li>支持所有摄像头的 4k 60帧 杜比视界录制（虽然基本用不上但至少有）</li>
+<li>照片有完整的 exif metadata，能在 Windows 和 Lightroom 等专业软件中正确识别。</li>
+</ul>
+<p>自然也有缺点：</p>
+<ul>
+<li>默认模式无法关闭自适应镜头，长焦可用性受限（得用专业模式）</li>
+<li>6X长焦进光量太少，并且由于上述原因，在暗光环境所有6x基本都会变成3x镜头的裁切，画质大幅下降。</li>
+<li>默认模式对比度拉特别高，也是疯狂涂抹降噪锐化。（但禁不住用户喜欢这种“清晰”的照片）</li>
+<li>部分场景下白平衡会乱飘</li>
+<li>快门相比小米有一点延迟，不过还算能接受</li>
+<li>heif 格式照片暂无法在iOS中正确识别 HDR 效果。</li>
+<li>dng 照片的拍摄信息无法被 iOS 相册 和 Explorer 读取（Lightroom可以）</li>
+<li>Raw 模式暗光下容易丢失色彩信息，需要后期处理</li>
+<li>除了 2x 以外的虚拟焦段都没有优化，只是纯粹做了个可吸附的挡位，全是用原生倍率去裁切的。</li>
+</ul>
+<p>其他的功能，也稍微聊一聊。</p>
+<p>原本觉得小米塞的垃圾东西已经够多了，没想到 ColorOS 更是到处贴满关不掉的牛皮藓广告。首先OOBE时就有近四五十个默认勾选的“增强服务”，还不支持一键关闭，只能手动一个一个慢慢关。系统软件里也有大量关不掉的广告（浏览器、钱包、天气）和一系列的流氓软件（乐划锁屏）</p>
+<p>系统动画虽然流畅，但有点拖泥带水，即将结束的时候跟突然踩到胶水一样慢半拍令人不适。</p>
+<p>在隐私空间里不能安装CA证书（提示无权限）虽然这个功能估计没人注意，但对我而言有一些特殊的场景需要使用，所以给个差评。</p>
+<p>顺便喷一下H***R的旗舰产品，七八千的“影像旗舰”，在专业模式Raw下竟然【不能切换摄像头】，闻所未闻。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/08/19/Oppo%20Find%20X7%20Ultra%20%E5%BD%B1%E5%83%8F%E7%AE%80%E8%AF%84/" data-id="cm49vqivb0003bqqj255lhzor" data-title="OPPO Find X7 Ultra 影像简评" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HDR/" rel="tag">HDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/OPPO/" rel="tag">OPPO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%89%8B%E6%9C%BA/" rel="tag">手机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A7%91%E6%8A%80/" rel="tag">科技</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-小米7月新品简评" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/07/24/%E5%B0%8F%E7%B1%B37%E6%9C%88%E6%96%B0%E5%93%81%E7%AE%80%E8%AF%84/" class="article-date">
+  <time class="dt-published" datetime="2024-07-24T10:00:00.000Z" itemprop="datePublished">2024-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/07/24/%E5%B0%8F%E7%B1%B37%E6%9C%88%E6%96%B0%E5%93%81%E7%AE%80%E8%AF%84/">小米2024年7月发布会新品简评</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="小米7月新品简评"><a href="#小米7月新品简评" class="headerlink" title="小米7月新品简评"></a>小米7月新品简评</h1><p>没看发布会，到米家摸了下。</p>
+<h3 id="手机"><a href="#手机" class="headerlink" title="手机"></a>手机</h3><p>K70U：后盖手感温润，类似磨砂玻璃。外观质感有了，但三个摄像头两个凑数，专业模式下甚至无法调用2mp的微距，8mp超广角降噪算法过于激烈，拍出来一米外就抹成跟油画一样基本不可用。标准模式下略好点，但也是烂。相机版本5.2，有GainMap算法。红米继续阉割录像，只支持4k30 hdr10录制。<br>影像配置：0.6x、1x、2x(裁切)</p>
+<p>Fold4：轻薄程度超出预期，折叠屏终于不是笨重砖头了，屏幕只有iPhone机身一半厚度，摄像头算上deco也才和iPhone差不多。但海帕OS切换屏幕时不如菊花手机开盖盒盖有过渡动画，很生硬的切换。录像还是只支持主摄4k60杜比，白瞎了这么厚的摄像头deco。拍照支持 HDR GainMap。转轴大部分角度都能悬停。建议线下重点摸摸这款体验一下手感。<br>影像配置：0.6x、1x（1g7p）、2x（6p），4x（裁切）、5x（潜望）<br>Raw模式下除潜望外dng都会发绿（和k70u一样）</p>
+<p>Flip：中规中矩，和别家折叠屏差不太多。但摄像头配置很有意思，把超广角拿掉了。这几年几乎没见到哪家多摄的手机会砍超广角。替代品变成了2x的中焦。拍照画质一般，普通千元机水平，不过这种手机本身也不是用来拍照的。<br>影像配置：1x、2x、4x（裁切）</p>
+<hr>
+<p>这几款手机专业模式都只有raw，不提供ultraraw，估计又是只供旗舰用。而且raw还是缺exif信息，这问题反馈一年多了就是不修，对后期处理极其不友好。</p>
+<p>这次手机产品个人最满意的就是 Fold 4，摄像头配置合理，轻薄程度上目前其他家也没什么竞品，除了海帕OS拖后腿以外算是米近几年第一台能配被称为“高端”的手机。<br>我认为这次新品还透露出一个信号，比起大底主摄来说，增加一个2x（50mm）左右焦段的摄像头是一个非常好的决策。就算是1’的主设，裁2x等效就剩1&#x2F;4’不到的传感器了。不如把主摄23mm做小点，腾出空间弄个2x，还能做4x裁切。在4摄像头的配置里算是比较符合日常使用的焦段（50mm人像）。</p>
+<p>2018年的iPhone 7 Plus系列首次出现了2x镜头，到了iPhone X之后被换成了超广角，于是其他厂家也纷纷跟进，除了凑数景深以外，基本双摄都必须得带一个超广角。这也导致了中焦在过去几年的缺失。</p>
+<p>苹果在iPhone14 Pro上提出了2x无损裁切的方案，近两年绝大部分中端机也开始支持，用于弥补本身缺失的长焦。不过，flip系列也显示出一个特性，米开始尝试拿走使用率较低的超广角镜头，使用中焦加裁切的方式弥补日常使用较多的中长焦。</p>
+<p>综上考虑，我认为米可能会在15U上砍掉使用率较低的超广角，配备50mm焦段的光学镜头，甚至可能上至多5摄，不过问题就是原先的一寸大底营销策略比较尴尬。如果为了多摄缩小主摄sensor就是打自己脸，但是不缩小也不太可能塞5摄进去（原先已经是1&#x2F;2.5’的imx858了，不太可能继续缩副摄）<br>原先2.6x的长焦换成2x，裁切一个3x 4x，其他配置不变，能照顾大多数主要焦段</p>
+<hr>
+<h3 id="穿戴产品："><a href="#穿戴产品：" class="headerlink" title="穿戴产品："></a>穿戴产品：</h3><p>手环9：铝合金和陶瓷版本，两个版本其实都只是边框，底下还是亲肤硅胶。陶瓷版本摸着很有质感，不过重量和穿戴产品有点不搭。虽然换上了线性马达，但是米成功将其调成了转子震感。整个系统试了几个主要功能，基本只有短震动和长震动两种区别。</p>
+<p>手表：UI交互拉跨，虽然是60帧的屏幕，但整个系统的常用功能都没什么过渡动画，仅存的几个动画甚至还是纯线性的（毫无审美的人才能做得出来）。震动也是稀烂，学苹果表把选择app滚动表冠的震动抄了过去，但马达也是和手环一样没什么调，再配上整个系统突兀的动画效果显得整个产品十分低廉。</p>
+<p>手环超过199就不建议购买了，手表考虑到米的维护态度（基本管生不管养）我也不建议任何人购买。</p>
+<p>#科技 #评测 #小米 #手机</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/07/24/%E5%B0%8F%E7%B1%B37%E6%9C%88%E6%96%B0%E5%93%81%E7%AE%80%E8%AF%84/" data-id="cm49vqivl000lbqqjdvc3ats9" data-title="小米2024年7月发布会新品简评" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/" rel="tag">发布会</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%89%8B%E6%9C%BA/" rel="tag">手机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A7%91%E6%8A%80/" rel="tag">科技</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-电影 《默杀》 观影指南简评" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%20%E3%80%8A%E9%BB%98%E6%9D%80%E3%80%8B%20%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97%E7%AE%80%E8%AF%84/" class="article-date">
+  <time class="dt-published" datetime="2024-07-16T10:00:00.000Z" itemprop="datePublished">2024-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%20%E3%80%8A%E9%BB%98%E6%9D%80%E3%80%8B%20%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="电影-《默杀》-观影指南-简评"><a href="#电影-《默杀》-观影指南-简评" class="headerlink" title="电影 《默杀》 观影指南&#x2F;简评"></a>电影 《默杀》 观影指南&#x2F;简评</h1><p>一刷评分： 6(+1)&#x2F;10<br>二刷评分： 7.5&#x2F;10</p>
+<p>配乐评分： 9&#x2F;10</p>
+<blockquote>
+<p>“这是我老公种的金桔”</p>
+</blockquote>
+<p><strong>【观影警告】：本片含有 校园霸凌、剪头发、血腥内容、家暴等场景，可能诱发严重 PTSD ，谨慎观影。不建议携带儿童。</strong></p>
+<p>本文尽量规避了剧透场景，只包含宣传海报上有的内容，但本片剧情并不悬疑，很容易猜，而且宣传海报也剧透了很多，为了最佳体验建议一刷前不看任何宣传材料和影评。</p>
+<p>一刷由于剧情节奏关系，容易忽略前半部分大量细节。推荐二刷，可较为完整的理解剧情。</p>
+<p>建议一刷观影中途不要离场，一些场景漏了会严重影响剧情理解。</p>
+<p>个人认为这部电影只看剧情就是 6.5~7 的水平。因为自己对片子里校园霸凌的部分感触很大，就这些场景而言我认为值得拉高整片的评分。另一个个人原因是慧君长得很像之前自己认识的一位mtf，剧中演员对ASD的演绎非常优秀（来自星星的孩子）。</p>
+<p>btw，校园霸凌组的演技也很不错，就是其中一位长得像中推某位在腾〇做神经网络框架 (<a target="_blank" rel="noopener" href="https://github.com/Tencent/ncnn)%E7%9A%84dalao%EF%BC%8C%E7%9C%8B%E7%9D%80%E6%9C%89%E7%82%B9%E5%87%BA%E6%88%8F%EF%BC%8C%EF%BC%8C">https://github.com/Tencent/ncnn)的dalao，看着有点出戏，，</a></p>
+<p>个人最喜欢的场景镜头： </p>
+<ol start="0">
+<li>校长在彩排仪式上拉开彩绳，〇〇掉下来在空中旋转的场景</li>
+<li>女主前往楼顶的情感表现</li>
+<li>徐阿姨（蔡明）躲在门口猫眼偷窥</li>
+<li>结尾处女主和几个霸凌者擦肩而过（这一幕带上 BGM 我愿意为全片多打 1.5 分）</li>
+</ol>
+<p>也有一些不满意的部分：</p>
+<ol>
+<li>〇〇是怎么做到在事情发生以后还能跟个没事人一样在屋顶擦玻璃的？</li>
+<li>当〇〇发生时，学生如同游戏里随机寻路的 NPC 一样乱跑，不符合逻辑。</li>
+<li>前期搞一堆 Jump Scare，还有部分场景刻意的血腥描写。</li>
+<li>人物在悲伤时场景就是特别刻板的乌云下雨天场景设计，背景也是一眼绿幕很出戏。</li>
+<li>为什么吴望要偷拍？还能偷拍好几年？这个人物像是纯粹为了补足剧情而设计。（Update：据消息称有删减，吴望父亲家暴母亲，导致吴望希望依靠录像留下证据，放映版本删减了这部分导致人设有点突兀。）</li>
+<li>校长开车走了以后，骑摩托车摔倒在地上的〇〇有点缺乏意义，像是刻意为了出场而出场。</li>
+<li>追逐战有一幕几秒钟的场景，车子的CGI（3D合成）痕迹很重。</li>
+<li>经常杀过人的都知道(?)，留在地上的血迹是很难清理的（剧中某个场景也有表现），那〇〇又是怎么搬运〇〇的尸体不被发现？</li>
+<li>〇〇在〇〇时才九岁，考虑到还是正当防卫，为什么最后会被关起来？（有说法称是为了过审，我持保留态度。）</li>
+<li>〇〇在全片结尾有点不符合常理，ta是怎么知道有人在偷拍的？为什么要演这一出戏？直接跑了不行吗？</li>
+<li>结局一个学生没钱没手机能去哪里？</li>
+</ol>
+<p>部分感到不适的场景：</p>
+<ol>
+<li>对霸凌的具体描写（第二次的霸凌在楼顶欺负〇〇，一刷极其难受差点看不下去想立即离场缓缓）</li>
+<li>钉子扎手</li>
+<li>办公室里校长的眼神，以及便利店老板对〇〇做出疑似性骚扰的动作。</li>
+</ol>
+<p>一些细节（观影时可以特别注意）：</p>
+<ol start="0">
+<li>符号：金桔、监控摄像头、鸽子、船、屋顶漏水的位置、校门口发传单时的路人</li>
+<li>霸凌者逃跑时「踩碎楼梯」 &lt;-&gt;  对应？</li>
+<li>鸽子撞上玻璃落地流血的样子 &lt;-&gt;  对应？</li>
+<li>女主在便利店、第一次上楼（搬家）和男人接触时母亲的表现。</li>
+<li>徐妈（蔡明）到底知道些什么？</li>
+<li>女主为什么穿这么多件衣服？</li>
+</ol>
+<p>在电影之外，想聊聊校园霸凌的部分。</p>
+<p>剧中的校园霸凌部分和现实相比已被美化过，国内学校很少有类似剧中这种无人监管的环境，而唯一没有装监控的地方就是厕所。<del>(已删减部分内容)</del></p>
+<p>自己在小学和中学时期虽然不是校园霸凌的参与者，但如同剧中的其他人物，见到身边的人被霸凌时都是沉默的旁观者、或者，帮凶。自己遇到霸凌发生时装作没看到，只想着尽快离开现场。面对受害者装作一副人畜无害的样子，在私下展现出关心，实际上利用这种关系从对方身上攫取利益。当时的我隐约感到这样不好，却又不敢挺身而出为受害者发声。身边的人都无法信任和依靠，如果一直保持沉默，如果下一个轮到的就是我，那时谁又会来帮我？</p>
+<p>被霸凌者处于一种极其无助的状态，身边的好友为了不被波及到而不敢帮忙甚至疏远。而求助身边的长辈，既没有人证（没人敢作证）也没有物证（都是在监控拍不到的地方）。最终大概率得到的是“一个巴掌拍不响”、“想想自己的原因”、“别去理他们就好”，甚至有些老师还会帮着霸凌者说话，对受害者产生二次伤害。受害者能做的只有逃离这个环境，或者是专门针对某个霸凌者用更极端的手段重拳出击（这很难控制下手轻重，之后也躲不掉民事赔偿和被开除）。</p>
+<blockquote>
+<p>“天上的沉默 地上的罪恶 哪一个可以宽恕我？”</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/07/16/%E7%94%B5%E5%BD%B1%20%E3%80%8A%E9%BB%98%E6%9D%80%E3%80%8B%20%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97%E7%AE%80%E8%AF%84/" data-id="cm49vqivo000qbqqjbsng8tah" data-title="电影《抓娃娃》简评" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BD%B1%E8%AF%84/" rel="tag">影评</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-电影《抓娃娃》简评" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%E3%80%8A%E6%8A%93%E5%A8%83%E5%A8%83%E3%80%8B%E7%AE%80%E8%AF%84/" class="article-date">
+  <time class="dt-published" datetime="2024-07-16T10:00:00.000Z" itemprop="datePublished">2024-07-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%E3%80%8A%E6%8A%93%E5%A8%83%E5%A8%83%E3%80%8B%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="电影《抓娃娃》简评"><a href="#电影《抓娃娃》简评" class="headerlink" title="电影《抓娃娃》简评"></a>电影《抓娃娃》简评</h1><p>评分：5.5~6 &#x2F; 10</p>
+<blockquote>
+<p>剧透警告：本评价含有电影剧透</p>
+</blockquote>
+<h3 id="观影感受"><a href="#观影感受" class="headerlink" title="观影感受"></a>观影感受</h3><p>观影之前，我没有了解任何信息。刚开始看到电影名称“抓娃娃”，以为指的是娃娃机，后来得知，这部电影原先叫《资本继承人》（英文名：Successor）。这么看来“抓娃娃”的新名字倒也切题。本来这篇评价在观影后就准备发的，但自己看的是提前点映，因此决定还是推迟到正式放映当天发布。</p>
+<h3 id="整体评价"><a href="#整体评价" class="headerlink" title="整体评价"></a>整体评价</h3><p>作为一部爆米花搞笑电影，《抓娃娃》尚还算及格。但全片的节奏和重心安排得不太恰当。前期花大量篇幅讲述童年，迅速成长后突然在高考前发现真相，最后结尾再花几分钟讲大道理，显得仓促且不连贯。特别是前期大量的童年描写让人期待后续的发展，但突然的成长和真相揭示显得过于突兀，影响了观影体验。</p>
+<h3 id="剧情问题"><a href="#剧情问题" class="headerlink" title="剧情问题"></a>剧情问题</h3><p>整部电影可以看作是中国版《楚门的世界》，充满了浓浓的老钟味。如果真有这家庭条件，还去想什么清北，纯粹是把自己拉低到普通人的水平线上。电影中将富养的“老大”描写成乱花父母钱、游手好闲、被养废的大号。最后被打了一顿突然“觉醒”并回归正常。而穷养的老二经历这一切后竟然还能明白父母的良苦用心，又去复读一年高考了。这种转变理由完全不可信，缺乏深度的心理描写和动机分析。</p>
+<p>剧情推动有明显的硬伤，例如，推动剧情发展的女同学的背景和动机不明，为什么她要管这么多事？不上课跑去监视男主父母？这些都缺乏合理解释。此外，影片中关键的情节推动显得过于生硬，缺乏合理的铺垫和过渡。例如男主角发现真相的情节，男主活了十几年，连他自家的柜子都没翻过？到游泳池泡个水，记忆一下子就回来了，短短几分钟就把整个计划都想好了？突然课上魔怔然后被赶出学校发现奶奶打篮球，爹妈为了不穿帮，忽悠儿子是压力太大出现幻觉。一觉起来发现原先健康的奶奶突然就死了，男主竟然一点怀疑都没有？这些问题使得观众难以理解剧情的合理性。</p>
+<p>现实中，反而是像老大这种能利用家庭条件的人，一开始就能站在绝大部分人的终点线上。老二才是那个被打断双腿、变得和普通人一样的人，真把老二这么养，最后只会变成一个极其自卑，畏手畏脚的人。如果之后得知真相，不是精神出问题，就是瞬间堕落。不如利用身边的条件，跳到更高的平台。所以本片的设定在现实中也显得不合理，如同皇帝用金锄头耕地一样。</p>
+<h3 id="社会现象"><a href="#社会现象" class="headerlink" title="社会现象"></a>社会现象</h3><p>有钱人的后代之所以有钱，是因为能在小时候有资本试错，把能踩的坑都踩了，自然就比其他同龄人有显著优势。富二代输得起，但普通人输不起。这一现象在现实中非常普遍，电影却没有深入挖掘这一点，只是浮于表面地展示了两种养育方式的差异，缺乏对深层社会问题的反思。</p>
+<h3 id="影片主题"><a href="#影片主题" class="headerlink" title="影片主题"></a>影片主题</h3><p>作为搞笑片，影片最后突然冒出一堆大道理，想对观众表达的是：主角虽然家里有钱，但人生已经被父母安排好，不再能够选择自己想成为的人。这个主题本身值得深入探讨，但本片作为爆米花片，很难在兼顾搞笑的同时讲大道理，因此结尾在处理时显得过于浅显和直白，缺乏对人性和社会现实的深入挖掘。</p>
+<p>主角能达成之后的成就，说到底还是因为背后有家庭条件撑着。想要考清北，家中请的全是最好的老师，十几年下来n对1专门辅导，想不考好都难。出去法国跑马拉松捡瓶子，只是少爷出去玩，爱怎么样都行。</p>
+<p>网络流行语<br>本片频繁出现网络流行语，可以理解为娱乐需要，但角色的语言显得过于刻意做作，显得与说话人的性格和背景不符，削弱了本片的真实感和代入感。</p>
+<p>地域情怀<br>这个分数里，其中1分给青岛。电影里出现的几个场景都是我曾经去过的地方（非常有特色的一眼xx），再次在电影中看到有一种莫名的熟悉和亲切。青岛的独特风景和人文氛围在电影中得到了很好的展示。（最主要没有满墙的学习某某思想和建设某某城市的标语横幅）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/07/16/%E7%94%B5%E5%BD%B1%E3%80%8A%E6%8A%93%E5%A8%83%E5%A8%83%E3%80%8B%E7%AE%80%E8%AF%84/" data-id="cm49vqivp000sbqqj31q5czq5" data-title="电影《抓娃娃》简评" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%BD%B1%E8%AF%84/" rel="tag">影评</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Vision Pro 简评" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/07/06/Vision%20Pro%20%E7%AE%80%E8%AF%84/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T10:00:00.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/07/06/Vision%20Pro%20%E7%AE%80%E8%AF%84/">Vision Pro 简评</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Vision-Pro-简评"><a href="#Vision-Pro-简评" class="headerlink" title="Vision Pro 简评"></a>Vision Pro 简评</h1><p>流程:</p>
+<p>是否佩戴眼镜？<br>如果有-放入机器验光，替换镜片</p>
+<p>面容识别，使用用户手机（需要下载一个Apple Store App）扫描员工二维码进入扫描页，注意外区账号商店无法扫员工二维码，只能用系统扫码器</p>
+<p>识别后系统会生成一个二维码，由员工扫描获取头部信息，然后取得对应的绑带和眼罩（我寻思你Apple怎么天天扫码扫码的，是不会用NFC吗）</p>
+<h3 id="佩戴："><a href="#佩戴：" class="headerlink" title="佩戴："></a>佩戴：</h3><p>开机，屏幕会显示一个苹果经典悬空Hello，按压数码表冠（比Watch稍大、手感硬点）进入初始化页面。</p>
+<p>首先伸出手臂定位，然后屏幕会出现一圈圆点，眼睛盯住后轻捏手指选定。这个步骤要初始化三次，一次是实景背景，另一次是灰色背景，第三次是纯白背景。<br>之后进入主页面，界面网上都有的就不赘述了。重点讲讲体验。</p>
+<h3 id="视场角："><a href="#视场角：" class="headerlink" title="视场角："></a>视场角：</h3><p>不及预期，仍会注意到一圈黑边。只能说能接受，但我不认为这是 Apple 应该有的水平。</p>
+<h3 id="分辨率："><a href="#分辨率：" class="headerlink" title="分辨率："></a>分辨率：</h3><p>注意不到像素点，满意 。</p>
+<h3 id="眼部识别精确度："><a href="#眼部识别精确度：" class="headerlink" title="眼部识别精确度："></a>眼部识别精确度：</h3><p>基本指哪打哪，超出预期，体验很好，仍有优化空间，能打80分。如果这个功能做到PC上就绝杀了，直接秒杀鼠标。</p>
+<h3 id="基础窗口操作："><a href="#基础窗口操作：" class="headerlink" title="基础窗口操作："></a>基础窗口操作：</h3><p>UI指示不清晰，调整窗口的横条、关闭按钮等都要眼睛看向对应区域才会显示出来。包括视频的播放按钮、进度条等，也是眼睛不移动到对应范围就完全隐藏。我认为大部分人不看教程基本不会用，退不出去就会一头雾水不知道如何操作，不符合苹果的“直觉”体验。</p>
+<h3 id="触控范围："><a href="#触控范围：" class="headerlink" title="触控范围："></a>触控范围：</h3><p>要把手放在面前，而且要注意手放松的时候得刻意把拇指和食指分开，否则容易被识别为点击操作，在 Apple Store 的桌子上操作极其别扭，只能是放在大腿上。但放腿上又经常识别不到，很微妙的位置，或者是手心朝上放桌上。</p>
+<h3 id="多任务："><a href="#多任务：" class="headerlink" title="多任务："></a>多任务：</h3><p>（演示机原因？）：只有桌面上的任务是开启的进程，一旦按下表冠回到主页面就直接把所有程序杀了。所以“后台”任务就是字面上的把窗口丢到其他地方去。</p>
+<h3 id="音频："><a href="#音频：" class="headerlink" title="音频："></a>音频：</h3><p>音质尚可，但没有主动降噪所以还是听得到环境音。不清楚其他人在旁边是否能听得到声音。</p>
+<h3 id="沉浸式体验："><a href="#沉浸式体验：" class="headerlink" title="沉浸式体验："></a>沉浸式体验：</h3><p>旋钮体验很别致，但是UI或许考虑到动画原因显得有点迟缓。而且中途出现多次bug，旋钮转了没反应。<br>旋钮似乎绑定了两个功能，一个是沉浸度调节，另一个是音量，旋钮旋转时会出现这两个图标，通过盯着其中一个图标调节。</p>
+<h3 id="相册App："><a href="#相册App：" class="headerlink" title="相册App："></a>相册App：</h3><p>空间照片和视频：非常好效果，看过就念念不忘。但拍摄设备是iPhone，本来分辨率就低（1080p30帧）还加了一堆锐化，单从画面上讲观感不太好，不过3D效果又弥补了这部分。<br>未来的预期应该是至少支持4k，去掉那该死的锐化，然后把HDR（杜比视界）补上。<br>相册功能非常基础，也可能是演示机限制，连图片信息都不能查看，基本只有发布会演示的那些功能。<br>全景照片：iPhone拍出来的就烂，所以观感也不好，只能说能用，全被iPhone那个垃圾相机毁了。</p>
+<h3 id="恐龙："><a href="#恐龙：" class="headerlink" title="恐龙："></a>恐龙：</h3><p>画质比想象的高，恐龙建模极其精细（只要不看口腔里面，不过也是一眼CGI，光照比不上真的），几乎注意不到传统3D模型的多边形锯齿。<br>btw，因为没后台，如果按到表冠就会直接杀掉这个demo，下次打开又得从头看。</p>
+<h3 id="浏览器："><a href="#浏览器：" class="headerlink" title="浏览器："></a>浏览器：</h3><p>sb体验（忍不住说脏话），估计产品经理自己都不用。刷个网页需要把手悬在空中，然后捏住手指大幅拖拽，刷个几次手都酸了，如果手臂架在桌上，甩手腕的范围是不够大的，不能触发页面滚动。不如配个鼠标。</p>
+<h3 id="腾讯视频（演示版）："><a href="#腾讯视频（演示版）：" class="headerlink" title="腾讯视频（演示版）："></a>腾讯视频（演示版）：</h3><p>3D视频就是电影院效果，但是视频分辨率不够，观感不好。同时手还不能放在画面里，会被系统高亮放大特别瞎眼。</p>
+<h3 id="实景图传、延迟和抠图："><a href="#实景图传、延迟和抠图：" class="headerlink" title="实景图传、延迟和抠图："></a>实景图传、延迟和抠图：</h3><p>实景效果比其他家好，经不起细看，还是能注意到模糊的地方，差不多类似眼睛散光加一百度近视。<br>虚拟场景精细度就高不少，可以以假乱真。<br>延迟个人觉得有点差，静止状态能用，动作幅度大点就会头晕，系统似乎加了动态模糊？<br>手部抠图精度比quest好，但也能看到边缘的像素没扣干净</p>
+<h3 id="空间定位精确性："><a href="#空间定位精确性：" class="headerlink" title="空间定位精确性："></a>空间定位精确性：</h3><p>比预期好，不会出现移动头部后元素偏移。（仅限原地转头测试，未大幅移动。）</p>
+<h3 id="外部电源："><a href="#外部电源：" class="headerlink" title="外部电源："></a>外部电源：</h3><p>和传统充电宝差不多重量（考虑到外壳可能算略重点），没什么特殊的。</p>
+<h3 id="发热："><a href="#发热：" class="headerlink" title="发热："></a>发热：</h3><p>不摸没有感知，摸了就是温热，体感约45~50度左右，听不到风扇声，也没有感受到热风吹脸。</p>
+<h3 id="总评："><a href="#总评：" class="headerlink" title="总评："></a>总评：</h3><p>Vision Pro 体验尚可，但谈不上跨时代。我认为目前的软件体验完全无法支撑其三万元的价格。如果价格能到1.5w，砍掉前面板显示，去除所有实景传感器直接当VR设备或许会更适合大部分人。实景效果不如AR也不如VR，卡在很尴尬的位置。说鸡肋吧，比其他家做得好，但是说体验好，画面又不经看。我认为开个虚拟背景然后丢几个虚拟窗口是物理多显示器的替代方案，同时保证了工作中的沉浸度。考虑到目前用的还是M2芯片，因此再过两年很可能无法使用更高级的 Apple Intelligence 功能而迅速被淘汰，因此在当下只能算是一种技术前瞻的玩具，至少还要发展两代以上才是适合普通消费者的完全体（价格也得降）。</p>
+<p>其他：<br>体验的30分钟是包含设备调试时间的，这次遇到的员工业务不熟练，配对的时候多次失误关掉了页面得重新扫描面部，之后折腾半天连不上机子发现是电源没插上去，浪费了不少时间。<br>体验结束的时候会把扫脸的配置信息（面罩尺寸、绑带规格）等直接加入购物车，如需购买就不用再扫描一次。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/07/06/Vision%20Pro%20%E7%AE%80%E8%AF%84/" data-id="cm49vqivb0004bqqj6zc76j24" data-title="Vision Pro 简评" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Vision-Pro/" rel="tag">Vision Pro</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A7%91%E6%8A%80/" rel="tag">科技</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%8B%B9%E6%9E%9C/" rel="tag">苹果</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-wwdc2024-adaptive-hdr" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/06/16/wwdc2024-adaptive-hdr/" class="article-date">
+  <time class="dt-published" datetime="2024-06-16T00:00:00.000Z" itemprop="datePublished">2024-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/WWDC/">WWDC</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/06/16/wwdc2024-adaptive-hdr/">WWDC 2024: 关于 Adaptive HDR 和一些想法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p>**标准动态范围 (SDR)**：这是最常见的图片动态范围格式，大部分图片都使用SDR。</p>
+<p>**高动态范围 (HDR)**：这种格式能够捕捉和显示更多的亮度和颜色细节。苹果的HDR照片由于其亮丽的效果而广受欢迎。</p>
+<p>**参考白 (Reference White)**：这是SDR的最大亮度在HDR中的对应亮度。例如，在HDR中使用的“白色”作为字幕会显得过于刺眼，此时参考白就是在HDR中看起来类似于SDR的亮度。</p>
+<p>**额外动态范围 (Headroom)**：这是HDR的最大亮度相对于参考白的比率。使用对数曲线计算，可被看作是SDR之上的“动态范围”，一档曝光即为1 stop。</p>
+<p>**映射 (Tone Mapping, TMAP)**：这是确保显示效果符合创作者意图的过程。由于不同显示设备的动态范围和环境不同，需要在显示时进行计算，以确保用户的观感一致。</p>
+<p><strong>ISO HDR</strong>：这是苹果参与开发的一种HDR照片标准，支持纯HDR照片或SDR+Gainmap。</p>
+<p>**映射到SDR (Tone Mapping to SDR)**：由于目前绝大多数软件仅支持SDR，因此HDR照片需要重新映射回SDR才能在大部分设备上正确显示（SDR+GainMap具有兼容性）。</p>
+<h2 id="HDR技术演进"><a href="#HDR技术演进" class="headerlink" title="HDR技术演进"></a>HDR技术演进</h2><p><strong>Apple GainMap</strong>：这是SDR图片加上一张存储了亮度信息的GainMap，从iPhone 12开始支持。</p>
+<p><strong>ISO HDR</strong>：苹果提交了上述技术到ISO组织，编号为ISO&#x2F;TS 22028-5。2023年10月左右，Adobe产品逐步实现对该标准的支持。</p>
+<p><strong>Adaptive HDR</strong>：苹果基于ISO HDR提出的新技术，旨在解决以下问题：</p>
+<ol>
+<li><strong>向后兼容SDR显示</strong>：SDR部分可在不支持HDR的设备上正常显示。</li>
+<li><strong>双渲染</strong>：可同时存储SDR和HDR信息（并非存储HDR的照片）。</li>
+<li><strong>映射优化</strong>：便于SDR和HDR互转，并在不同设备上控制亮度。</li>
+</ol>
+<p>GainMap计算公式：G&#x3D;log2(HDR+khdr&#x2F;SDR+ksdr)，其中k值的技术细节由于草案尚未公开暂无法得知。此公式是动态范围的变种。</p>
+<p>Adaptive HDR由SDR+GainMap组成，HDR照片根据SDR+GainMap计算得出。苹果也将该技术提交到HEIC标准（草案）。</p>
+<h3 id="苹果设备拍照"><a href="#苹果设备拍照" class="headerlink" title="苹果设备拍照"></a>苹果设备拍照</h3><p>旧设备和系统使用Apple GainMap，即SDR图片加一张灰度的GainMap。iOS 18和iPhone 15系列的Adaptive HDR的GainMap层支持RGB通道，使得HDR色彩空间支持了P3-PQ。</p>
+<h2 id="iOS上的HDR标准映射策略"><a href="#iOS上的HDR标准映射策略" class="headerlink" title="iOS上的HDR标准映射策略"></a>iOS上的HDR标准映射策略</h2><p><strong>ISO GainMap</strong>：</p>
+<ul>
+<li>旧版本：使用固定的ITU曲线，由系统决定（硬件最高支持亮度或用户指定）。</li>
+<li>新版本：采用Apple Reference White Tone Mapping Operator，据称效果更好，大幅降低高光裁切并提升色彩表现。</li>
+</ul>
+<p><strong>Adaptive HDR</strong>：<br>根据GainMap对每个像素单独处理，只需用公式乘以显示器的动态范围即可得出对应的亮度信息。然而，苹果似乎并非直接使用GainMap，而是将其作为某个公式的参数（技术细节尚未公开）。</p>
+<h2 id="开发者相关"><a href="#开发者相关" class="headerlink" title="开发者相关"></a>开发者相关</h2><p>iOS 18允许开发者根据需求读取Adaptive HDR照片，系统会自动转换为所需格式。</p>
+<p>开发者可以选择：</p>
+<ul>
+<li><strong>只处理SDR</strong>：当作普通照片处理，无需额外操作。</li>
+<li><strong>只处理HDR</strong>：最简单的实现方式，但系统只能预估GainMap，SDR显示可能出现问题。</li>
+<li><strong>处理SDR + GainMap</strong>：系统会自动计算HDR结果，但某些操作可能对GainMap产生意外效果。</li>
+<li><strong>处理SDR + HDR</strong>：分别处理两张照片，系统自动计算GainMap值，操作较为复杂。</li>
+</ul>
+<h2 id="关于显示"><a href="#关于显示" class="headerlink" title="关于显示"></a>关于显示</h2><p>iOS 18提供了新的映射API，UIImageView和Swift UI可以自动处理，开发者只需指定图片在系统界面上的目标亮度即可。在显示之前，需根据不同的读取策略进行相应的映射处理。</p>
+<h2 id="关于保存"><a href="#关于保存" class="headerlink" title="关于保存"></a>关于保存</h2><ul>
+<li><strong>只编辑HDR</strong>：保存为ISO HDR（原生HDR格式，如avif、jpeg xl）。</li>
+<li><strong>编辑SDR和HDR</strong>：保存为Adaptive HDR，系统会自动计算GainMap并保存。</li>
+<li><strong>编辑SDR和GainMap</strong>：保存为Adaptive HDR，HDR部分由系统自行处理。</li>
+</ul>
+<h2 id="个人看法"><a href="#个人看法" class="headerlink" title="个人看法"></a>个人看法</h2><p>目前林檎是所有厂商中对 HDR 支持最好的一个，现在的问题在于三方APP什么时候适配。去年开始的HDR照片到了今年也只有寥寥几家厂商实现（就连林檎都不算好），考虑到三方用的都是自己的库和实现，这次还兼容了SDR，我很怀疑厂商会有动力去适配这个功能，反而如果林檎宣布iOS18起只支持ISO HDR照片，说不定三方的支持就快多了，不过这就牺牲了很大一部分的兼容性，没有实际操作可能。</p>
+<p>如果想把自己用其他设备拍摄的raw照片导入到苹果设备里欣赏HDR效果，可以考虑输出格式为 jpeg + hdr，也就是 ISO HDR（GainMap）那套方案，这是目前对 SDR 兼容最好的方案，缺点是空间占用大。另外输出一份avif，导入到iPhone设备里（记得单独分个相册，因为 iOS17 的支持不太好，如果 iOS18 修复了还能方便删掉重新导入。）</p>
+<p>关于iOS17的支持，17.5.1仍然不支持 Adobe 的 hdr jpg照片（没有HDR效果），Adobe 说是林檎不认他的彩色 GainMap。对于avif这种纯hdr的格式也有问题，例如：</p>
+<ol>
+<li>从iPad导入会出现色彩断层、偏色问题（只能用OLED的iPhone导入）</li>
+</ol>
+<blockquote>
+<p>由于单HDR照片不包含到SDR的下变换，林檎在【导入时】就在内部转换为了heic照片用作预览，这个处理的算法刚好存在问题。只有点击【编辑】按钮后才会实际加载avif照片（这时候显示是正常的）。</p>
+</blockquote>
+<ol start="2">
+<li>照片缓存机制问题，iPhone重置后，从iCloud同步回的avif照片hdr信息就全丢了，只剩下sdr的部分</li>
+</ol>
+<blockquote>
+<p>Workaround：<del>将显示异常的照片旋转90度，保存。批量复制粘贴，然后再旋转270度，保存。由于对照片进行了更改，iOS会重新渲染一份正确的HDR。（注意不能直接转360度，林檎会认为没有更改，不会触发重渲染）</del><br>Update：Beta3 起已失效，林檎会识别为无更改</p>
+</blockquote>
+<p>截至 iOS 18 Beta 4 还不支持将 jpg+hdr 照片转换为 heic（会丢失hdr信息），所以在目前的时间节点想要享受HDR，只能是放弃兼容性，或者牺牲存储空间。</p>
+<blockquote>
+<p>Update: Beta4 可以使用快捷指令正确转换 avif 照片到 Heic，同时保留 hdr</p>
+</blockquote>
+<p>（我觉得林檎大概率不会修旧照片的bug了，这个问题太冷门，全网都没几个反馈的，估计吃螃蟹的人也太少了，只有关心摄影和技术的才会发现。从iOS17 beta反馈了十几次了都是石沉大海）</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>目前只建议将 avif 格式的照片存储在手机中，如果没有 mac，最好单独存放在一个相册里。等到正式版发布后再根据情况决定是否重新导入。从 iOS 17 beta 1 开始的问题反馈多次仍未解决，希望在 iOS 18 中能有更好的体验。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/06/16/wwdc2024-adaptive-hdr/" data-id="cm49vqivf000bbqqj8nckfnp7" data-title="WWDC 2024: 关于 Adaptive HDR 和一些想法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Apple/" rel="tag">Apple</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HDR/" rel="tag">HDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/" rel="tag">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-终身质保" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/06/10/%E7%BB%88%E8%BA%AB%E8%B4%A8%E4%BF%9D/" class="article-date">
+  <time class="dt-published" datetime="2024-06-10T10:00:00.000Z" itemprop="datePublished">2024-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/06/10/%E7%BB%88%E8%BA%AB%E8%B4%A8%E4%BF%9D/">终身质保</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="《终身质保》"><a href="#《终身质保》" class="headerlink" title="《终身质保》"></a>《终身质保》</h1><p>在家电行业中，部分产品会标注自己是“终身质保“，不少买家会理解为保修一辈子。然而这个终身并非指的是用户的寿命，而是产品的设计寿命（例如热水器的”终身“指的是8年）。</p>
+<p>对于尚在校园之中的年轻人们，也会对”永远的好朋友“抱有过高的期望。但步入社会后，每个人都有了自己的生活。原先一起开黑的小伙伴再也没有上线，一起出门玩的朋友要工作要养家抽不出时间，群里吹水的网友们相互的共同话题也越来越少。自己站在交叉路口前，犹豫着下一步该往哪走。当相互的联系只剩下了好友列表中的占位符，也就基本宣告了这段关系的结束。</p>
+<p>每个人在小的时候应该都有几位非常亲密的玩伴，这一段关系通常也止步于搬家、外出上学，一旦离开了现实中的共同环境，连情侣都会因为异地而分手，又如何相信自己能够和对方永远成为朋友呢？就算自己愿意，可对方也有自己的生活，没有共同话题却还去纠缠，只会让对方感到困惑。</p>
+<p>成年以后面对的问题不再像是在校园内一般单纯，工作压力、家庭责任，在这个快节奏的社会中，这些都让人很难抽身去维护一段曾经亲密的友情，更何况是几年见不到一次面的人。很多时候一段关系的结束并非出于尖锐的矛盾，而是被时间和距离逐渐抹去。曾经的好友如今已成为陌路人，保持联系的负担超过了友情所带来的乐趣，渐渐地，自己就会逐步意识到没有什么东西是永恒的。</p>
+<p>有时好友列表中几年未交流过的、曾经的好友突然发了条消息来问候，这时我甚至会感到一些压力：对方想要说什么？是不是有什么事情？经过了一系列的客套话后，最终都是以“以后有空出来吃个饭”结束。只是双方都知道这个“以后”是永远不会到来的。每次看到这样的消息，我都会有一种复杂的情绪交织在心头。一方面，我感到欣慰，毕竟曾经的友谊还在某个时刻被记起；另一方面，我也深知，这样的联系更多是一种社交礼仪，而非真正的重拾旧情。我们各自的生活早已不同，过去的共同话题早已淡去，曾经的回忆也逐渐模糊。</p>
+<p>时间可能会带走很多东西，但它无法抹去曾经的真情实感。无论是友情还是爱情，我想最重要的是：自己全身心地投入于这段关系之中，珍惜当下。每一段关系都有其独特和不可替代的意义，放下对于“永恒”的执念，即使未来终有一别，但与在意之人的共同时光，仍然是人生记忆中不可或缺的一部分。也正是这些回忆，构成了自身生命的丰富多彩。接受和珍惜这个结果，不为过去的离别而懊恼，而为那些曾经的美好时光感到感激，也是自身成长的重要一步。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/06/10/%E7%BB%88%E8%BA%AB%E8%B4%A8%E4%BF%9D/" data-id="cm49vqivq000tbqqj7g4v1udb" data-title="终身质保" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/" rel="tag">人际关系</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BA%A4/" rel="tag">社交</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BC%9A/" rel="tag">社会</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-观社群媒体有感：跨性别群体中的认同欲求与性别焦虑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/05/30/%E8%A7%82%E7%A4%BE%E7%BE%A4%E5%AA%92%E4%BD%93%E6%9C%89%E6%84%9F%EF%BC%9A%E8%B7%A8%E6%80%A7%E5%88%AB%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%9A%84%E8%AE%A4%E5%90%8C%E6%AC%B2%E6%B1%82%E4%B8%8E%E6%80%A7%E5%88%AB%E7%84%A6%E8%99%91/" class="article-date">
+  <time class="dt-published" datetime="2024-05-30T22:17:02.000Z" itemprop="datePublished">2024-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/05/30/%E8%A7%82%E7%A4%BE%E7%BE%A4%E5%AA%92%E4%BD%93%E6%9C%89%E6%84%9F%EF%BC%9A%E8%B7%A8%E6%80%A7%E5%88%AB%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%9A%84%E8%AE%A4%E5%90%8C%E6%AC%B2%E6%B1%82%E4%B8%8E%E6%80%A7%E5%88%AB%E7%84%A6%E8%99%91/">观社群媒体有感：跨性别群体中的认同欲求与性别焦虑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>观社群媒体有感：跨性别群体中的认同欲求与性别焦虑</p>
+<p>有些年轻跨儿，尤其是学生群体会抱持不切实际的幻想，认为Trans是解锁美好生活的钥匙，无非是吃点淀粉片，最多就是做个手术改证。这是对代价的错误认知。ta们天真的以为出柜了就有家里人支持，有了家里人支持就能像跨圈大V那样闪闪发光、受人追捧。然而这些 “成功” 大V背后的真实家庭条件并非绝大多数普通人一辈子所能企及。大V们有的十几岁家里人就送去加拿大，飞叶子惹事被起诉还有家人帮忙善后的“京爷”、后台关系硬到实名上网贩卖药物都没人敢去“开盒”的赵二代，欧美读博锐评国内少数群体权益的留子，在网上晒〇丰银行上百万存款的跨妹。如果你确实拥有这种背景和资源，那你的情况可能会与大多数在生存中挣扎的人们不同，希望你能充分利用这些条件，祝你有幸福的一生。</p>
+<p>只要一部手机，就能因为同一个身份认同被社群接纳和欢迎。当缺爱的年轻人们接触了跨圈，发现只要和“蓝粉白”有关就能得到其他人的关注，很容易误以为这种焦虑是因性别不符而起。「男娘」需要再穿搭、化妆、伪音上投入大量时间才能得到认同，而「跨圈」仅需挂个旗子emoji的门槛可谓是相当低。同类之间的“贴贴”无论是真心亦或社交礼仪，都能很大程度缓解自己渴望认同的焦虑。对学生而言做点白日梦畅想未来并没有错。但不应被圈子所蒙蔽，无意或者刻意忽视现实中客观存在的问题。自我认同应由内心激发，而非由他人外部的认可提供。</p>
+<p>[ 敏感内容警告: 可能引起部分群体不适 ]</p>
+<p>圈子里的一些人看到他人的美好生活，评论区嘴上说羡慕，心里不知道咒了对方多少次。另一边却又选择性忽略“同类”在蜕变过程中经历的痛苦，跳楼、送进矫正学校。只是敲打键盘发送个“抱抱”、“摸摸”，然后暗自庆幸 “还好自己没这么惨”。同类变成星星了，转个推发点蜡烛emoji，转头就忘了这回事。为了得到他人的认同，在网上发各种药片和化工原料“赛博紫砂”退网装死，过两天舍不得ta那些粉丝，又从棺材里仰卧起坐蹦起来，一而再再而三欺骗和伤害真正关心ta的人。顶着蓝粉白头像emoji发表各种逆天言论和行为吸引关注炒作，刻板印象挂件如提拉熊、玉桂狗、库洛米挂得满背包上叮当响，又一点不研究穿搭仪态化妆，也不注意个人卫生。只会想着那连定位线都没拆的JK和过膝袜，衣服要蓝粉白的，房间要蓝粉白的，就差把地球都刷成蓝粉白的。在网上过度沉迷于虚拟形象，甚至把卡通头像当成真实的自己。</p>
+<p>在圈子里让ta人评价自己，和小〇书上“姐妹底子不错瘦下来一定很好看”是一样的。圈内人对“不那么pass”的同类，通常不会使用攻击性的语言。首先是出于礼仪，避免说得太难听，其次是潜意识中认为对方不构成威胁，同时想展现出自己的宽容度。然而非真实的评价容易使自己固步自封，从而容易忽视自身存在的问题和需要改进的地方。就服装而言，JK服并不适用于大部分mtf，首先JK对于身材的要求极高。而且对于与家人或者在宿舍居住的学生，在家中存放这类特征明显的衣物也存在一定“爆柜”的风险。好在学生拥有很多试错的机会和时间，在中推能检索到大量推荐的服装店铺，可以参照店铺内的穿着打扮、以及在小红书上检索穿搭相关内容先培养自身审美，从中性的服装开始尝试，等自身掌握了一定的穿搭技巧、找到了适合自己的风格之后再过渡到更加女性化的服装会更加安全。</p>
+<p>在当今的CN社会，人们高度重视颜值，性别认同的议题在墙内几乎是负面的。不够pass只会让人认为你是刻板印象中的“男扮女装”的变态。这并非是鉴跨或者鉴pass，因为在目前高压的网络环境中，不够pass是个危险的信号：一旦被人拍摄并发布到网上引发舆论风暴，紧随而来的就是大量的短信电话骚扰和网络暴力，极有可能导致自身产生严重的心理创伤和精神问题。如果你很不幸的被卷入了这种网络风波，建议不要进行过激的回应，锁推、屏蔽相关用户，之后断开所有网络连接，等一周以后再上线，避免自身情绪受到影响。</p>
+<p>“选择「吃糖」-&gt; 有同类「贴贴」-&gt; 变得像卡通女孩一样受欢迎”，这种想法在《别当欧尼酱》动画播出后，因为误解而“翻车”的“友跨顺男”数量显著增加。受到日本动漫作品的影响，再看到当今网上流传的男娘段子中各种吸引人的照片，就会把“糖”幻想成美波里的药，只要吃了药就能摆脱当前的困境（这和许多人认为【只要】吃精神药物就能变正常的想法相似）。然而现实生活中的问题往往是多方面的，并非单一原因所致。一旦自己错误地将所有问题完全归因于性别焦虑（GD），那么越往错误的道路走下去，离精神崩坏就又进了一步。这个问题的关键是，自己是真的焦虑于性别不一致，还是期待从他人身上得到认同？想清这个问题，也是对自己当下的选择和未来的道路负责。</p>
+<p>跨儿们在1x岁或许还能依靠青春贩卖身体，假装问题不存在。可随着毕业后步入社会，自我认同与社会压力的矛盾将越发尖锐。如果没有充足的钱、权，也没有掌握不易被取代的特殊技能，已有无数案例揭示在国内“做自己”会发生什么事情和后果。因此趁年轻还有时间，尽量多学一些实用的技能。如果有条件，可以考虑留学渠道出去，如果没有条件，也可以学一些短期内不容易被AI取代的技能。花大量时间在社交媒体上扮猫娘“贴贴”虽然可以带来心理上的安慰，但对长期的自我提升帮助有限。获得他人认同的关键在于提升自身的能力，而不仅仅是在网络上提供情绪价值（ChatGPT也能做到，而且还能 7x24 响应）。尽量提升自己的实际技能和知识，以便在未来能够更好地应对各种挑战，别让自己到最后只剩下「原先是跨，现在喝中药调理好了」的选项。</p>
+<p>—————</p>
+<p>一些小建议，供参考：</p>
+<ol>
+<li><p>如果对于自己的身材和体重感到焦虑，觉得减不下来，可以看看推特（@芒伊木）老师的变化。但对于自身健康密切相关的指标，请不要使用过激的方式（各种所谓“减肥药”、“减肥茶”）尝试速成。通常非药物引起的体重增加，可以通过控制日常饮食去调整。调整饮食结构，降低碳水摄入，不喝奶茶和含有精制糖分的饮品。</p>
+</li>
+<li><p>对于服装的选型和雷区，可以在小红书上搜索穿搭相关内容，里面有详细讲解如何判断自己的身材，以及挑选适合自己的衣服。对mtf来说最大的问题基本都在肩宽，所以在这点上需要特别注意，基本上所有带有泡泡袖的cos服是不太适合的。</p>
+</li>
+<li><p>发型需要根据自己的条件因地制宜，有的发型由于客观条件是不适合自己的，例如脸型、发质不匹配。如果开始留长发，那么到过肩之前最好是都不要剪，除非你知道自己在做什么。</p>
+</li>
+<li><p>少刷推，少刷社群媒体，远离负能量的人。每天尽量抽出时间去慢跑运动（不需要给自己太多压力），如果实在跑不动至少也要走路。有条件的晒晒太阳（清晨或者傍晚），对精神健康有极大帮助。按时吃药，晚上不要刷手机，看会书或者动画片。最难的是做出改变的这一步，一旦开始行动，后面基本上就畅通无阻了。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/05/30/%E8%A7%82%E7%A4%BE%E7%BE%A4%E5%AA%92%E4%BD%93%E6%9C%89%E6%84%9F%EF%BC%9A%E8%B7%A8%E6%80%A7%E5%88%AB%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%9A%84%E8%AE%A4%E5%90%8C%E6%AC%B2%E6%B1%82%E4%B8%8E%E6%80%A7%E5%88%AB%E7%84%A6%E8%99%91/" data-id="cm49vqivs0010bqqjfr8odvu0" data-title="观社群媒体有感：跨性别群体中的认同欲求与性别焦虑" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MtF/" rel="tag">MtF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BC%9A/" rel="tag">社会</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%B7%A8%E6%80%A7%E5%88%AB/" rel="tag">跨性别</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-裸聊敲诈的消亡" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/03/08/%E8%A3%B8%E8%81%8A%E6%95%B2%E8%AF%88%E7%9A%84%E6%B6%88%E4%BA%A1/" class="article-date">
+  <time class="dt-published" datetime="2024-03-08T17:04:04.000Z" itemprop="datePublished">2024-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/03/08/%E8%A3%B8%E8%81%8A%E6%95%B2%E8%AF%88%E7%9A%84%E6%B6%88%E4%BA%A1/">裸聊敲诈的消亡</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>和 第四代谈天吉皮提  谈谈裸聊敲诈。</p>
+<p>“你提到的裸聊被敲诈的现象确实是移动互联网时代的一大问题，这种敲诈行为侵犯了个人隐私，给受害者造成了极大的心理压力和经济损失。随着人工智能（AI）技术的发展，特别是深度伪造技术（如深度学习生成的假视频和图片）的进步，确实在某种程度上改变了这个游戏的规则。</p>
+<p>在AI技术成为公众知识之前，伪造的视频或图片可能会被大众默认为真实的，因为大多数人不具备辨别或者理解这些内容可以被技术手段轻易伪造的知识。这种情况为敲诈犯提供了操作空间，让他们可以利用这种不匹配的认知来施加压力。</p>
+<p>然而，随着生成式AI技术的发展和普及，公众开始更加了解和认识到任何视频或图片都有可能被伪造，这种认知的转变对于打破敲诈者利用虚假信息施压的策略至关重要。当大众普遍认为任何人的面孔都可能被植入到不雅内容中，而且这种操作可以通过AI技术轻易完成时，虚假内容的影响力和敲诈效果自然会减弱。这种观念转变，实际上提高了社会对这类伪造内容的免疫力，人们对于视频和图片内容的真实性的看法发生了根本性的变化。</p>
+<p>从这个角度来看，AI技术本身既是一个双刃剑，也是影响社会认知和行为模式变化的一个驱动力。尽管AI技术在初期可能加剧了某些负面行为（如使用伪造视频进行敲诈），但随着时间的推移和技术的普及，它也可能促使社会产生新的防御机制，即通过改变人们对这些技术可能产生的结果的看法来减少这些行为的影响力。</p>
+<p>这种情况强调了教育和公众意识提升的重要性，让人们了解AI技术的潜力和限制，以及它如何被用于好的方面或被滥用。同时，它也提示了对法律和监管框架的持续更新的必要性，以适应技术进步带来的新挑战。最终，社会的适应能力和对新兴技术的理解将是我们保护个人隐私和打击不法行为的关键。”<br>（有部分删改）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2024/03/08/%E8%A3%B8%E8%81%8A%E6%95%B2%E8%AF%88%E7%9A%84%E6%B6%88%E4%BA%A1/" data-id="cm49vqivr000xbqqj0cf865ba" data-title="裸聊敲诈的消亡" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/GPT/" rel="tag">GPT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BC%9A/" rel="tag">社会</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/WWDC/">WWDC</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Action/" rel="tag">Action</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Apple/" rel="tag">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/DJI/" rel="tag">DJI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/GPT/" rel="tag">GPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HDR/" rel="tag">HDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mastodon/" rel="tag">Mastodon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Minecraft/" rel="tag">Minecraft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MtF/" rel="tag">MtF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/OPPO/" rel="tag">OPPO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Smartphone/" rel="tag">Smartphone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Vision-Pro/" rel="tag">Vision Pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/" rel="tag">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iPad/" rel="tag">iPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iPhone/" rel="tag">iPhone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/" rel="tag">人际关系</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/" rel="tag">发布会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%A4%A7%E7%96%86/" rel="tag">大疆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/" rel="tag">平板电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BD%B1%E8%AF%84/" rel="tag">影评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%89%8B%E6%9C%BA/" rel="tag">手机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B6%88%E8%B4%B9%E7%94%B5%E5%AD%90/" rel="tag">消费电子</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BA%A4/" rel="tag">社交</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93/" rel="tag">社交媒体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BC%9A/" rel="tag">社会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%91%E6%8A%80/" rel="tag">科技</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%B4%E6%8A%A4/" rel="tag">维护</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%8B%B9%E6%9E%9C/" rel="tag">苹果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%84%E6%B5%8B/" rel="tag">评测</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%B7%A8%E6%80%A7%E5%88%AB/" rel="tag">跨性别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA/" rel="tag">运动相机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%AB%98%E8%80%83/" rel="tag">高考</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/AI/" style="font-size: 10px;">AI</a> <a href="/blog/tags/Action/" style="font-size: 10px;">Action</a> <a href="/blog/tags/Android/" style="font-size: 10px;">Android</a> <a href="/blog/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/blog/tags/DJI/" style="font-size: 10px;">DJI</a> <a href="/blog/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/blog/tags/HDR/" style="font-size: 16.67px;">HDR</a> <a href="/blog/tags/Mastodon/" style="font-size: 10px;">Mastodon</a> <a href="/blog/tags/Minecraft/" style="font-size: 10px;">Minecraft</a> <a href="/blog/tags/MtF/" style="font-size: 10px;">MtF</a> <a href="/blog/tags/OPPO/" style="font-size: 10px;">OPPO</a> <a href="/blog/tags/Smartphone/" style="font-size: 10px;">Smartphone</a> <a href="/blog/tags/Vision-Pro/" style="font-size: 10px;">Vision Pro</a> <a href="/blog/tags/iOS/" style="font-size: 16.67px;">iOS</a> <a href="/blog/tags/iPad/" style="font-size: 10px;">iPad</a> <a href="/blog/tags/iPhone/" style="font-size: 13.33px;">iPhone</a> <a href="/blog/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/" style="font-size: 10px;">人际关系</a> <a href="/blog/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/" style="font-size: 10px;">发布会</a> <a href="/blog/tags/%E5%A4%A7%E7%96%86/" style="font-size: 10px;">大疆</a> <a href="/blog/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/blog/tags/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/" style="font-size: 10px;">平板电脑</a> <a href="/blog/tags/%E5%BD%B1%E8%AF%84/" style="font-size: 13.33px;">影评</a> <a href="/blog/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="font-size: 10px;">我的世界</a> <a href="/blog/tags/%E6%89%8B%E6%9C%BA/" style="font-size: 16.67px;">手机</a> <a href="/blog/tags/%E6%91%84%E5%BD%B1/" style="font-size: 13.33px;">摄影</a> <a href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/blog/tags/%E6%B6%88%E8%B4%B9%E7%94%B5%E5%AD%90/" style="font-size: 13.33px;">消费电子</a> <a href="/blog/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 13.33px;">电影</a> <a href="/blog/tags/%E7%A4%BE%E4%BA%A4/" style="font-size: 13.33px;">社交</a> <a href="/blog/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93/" style="font-size: 10px;">社交媒体</a> <a href="/blog/tags/%E7%A4%BE%E4%BC%9A/" style="font-size: 16.67px;">社会</a> <a href="/blog/tags/%E7%A7%91%E6%8A%80/" style="font-size: 20px;">科技</a> <a href="/blog/tags/%E7%BB%B4%E6%8A%A4/" style="font-size: 10px;">维护</a> <a href="/blog/tags/%E8%8B%B9%E6%9E%9C/" style="font-size: 16.67px;">苹果</a> <a href="/blog/tags/%E8%AF%84%E6%B5%8B/" style="font-size: 10px;">评测</a> <a href="/blog/tags/%E8%B7%A8%E6%80%A7%E5%88%AB/" style="font-size: 10px;">跨性别</a> <a href="/blog/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 16.67px;">软件</a> <a href="/blog/tags/%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA/" style="font-size: 10px;">运动相机</a> <a href="/blog/tags/%E9%AB%98%E8%80%83/" style="font-size: 10px;">高考</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/12/04/2024.12.HDR%E6%8E%A2%E7%B4%A2/">2024.12 HDR 照片兼容性探索</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/19/Oppo%20Find%20X7%20Ultra%20%E5%BD%B1%E5%83%8F%E7%AE%80%E8%AF%84/">OPPO Find X7 Ultra 影像简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/24/%E5%B0%8F%E7%B1%B37%E6%9C%88%E6%96%B0%E5%93%81%E7%AE%80%E8%AF%84/">小米2024年7月发布会新品简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%20%E3%80%8A%E9%BB%98%E6%9D%80%E3%80%8B%20%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%E3%80%8A%E6%8A%93%E5%A8%83%E5%A8%83%E3%80%8B%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 AngelAme<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

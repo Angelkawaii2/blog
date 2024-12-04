@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Minecraft 服务器维护与管理经验 | AngelsBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文编写于2020年，目前已不再更新，内容仅供参考。 本文字数 22000 ，阅读时间约需 30~60 分钟  目前国内关于开服的教程非常多，但是对于如何进行管理和维护的文章屈指可数，希望本文能给各位服主&#x2F;管理 一些经验和启发。  本文是自2014年以来积累的服务器维护与管理经验，包含一些主观的看法，由于时间仓促，难免出现错误，欢迎指正    本文会介绍一些开服相关的必要知识，但本文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Minecraft 服务器维护与管理经验">
+<meta property="og:url" content="https://angelkawaii2.github.io/blog/2020/01/01/Minecraft-Server-Managements/index.html">
+<meta property="og:site_name" content="AngelsBlog">
+<meta property="og:description" content="本文编写于2020年，目前已不再更新，内容仅供参考。 本文字数 22000 ，阅读时间约需 30~60 分钟  目前国内关于开服的教程非常多，但是对于如何进行管理和维护的文章屈指可数，希望本文能给各位服主&#x2F;管理 一些经验和启发。  本文是自2014年以来积累的服务器维护与管理经验，包含一些主观的看法，由于时间仓促，难免出现错误，欢迎指正    本文会介绍一些开服相关的必要知识，但本文">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-04T12:43:52.347Z">
+<meta property="article:author" content="AngelAme">
+<meta property="article:tag" content="Minecraft">
+<meta property="article:tag" content="我的世界">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="维护">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="AngelsBlog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">AngelsBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://angelkawaii2.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Minecraft-Server-Managements" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2020/01/01/Minecraft-Server-Managements/" class="article-date">
+  <time class="dt-published" datetime="2020-01-01T00:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Minecraft 服务器维护与管理经验
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="本文编写于2020年，目前已不再更新，内容仅供参考。"><a href="#本文编写于2020年，目前已不再更新，内容仅供参考。" class="headerlink" title="本文编写于2020年，目前已不再更新，内容仅供参考。"></a>本文编写于2020年，目前已不再更新，内容仅供参考。</h2><blockquote>
+<p>本文字数 22000 ，阅读时间约需 30~60 分钟</p>
+</blockquote>
+<p>目前国内关于开服的教程非常多，但是对于如何进行管理和维护的文章屈指可数，希望本文能给各位服主&#x2F;管理 一些经验和启发。 </p>
+<p>本文是自2014年以来积累的服务器维护与管理经验，包含一些主观的看法，由于时间仓促，难免出现错误，欢迎指正  </p>
+<blockquote>
+<p>本文会介绍一些开服相关的必要知识，但本文  <strong>不是</strong>  Minecraft 开服的基础教程。 </p>
+</blockquote>
+<p>本文默认读者有一定的开服经验，如果没有开过服务器，可以搜索相关的开服教程并进行实践。<br>如果您经验丰富，本文提供了拓展阅读的相关文章供参考（英语）  </p>
+<hr>
+<h2 id="技术要求"><a href="#技术要求" class="headerlink" title="技术要求"></a>技术要求</h2><h3 id="英语要求"><a href="#英语要求" class="headerlink" title="英语要求"></a>英语要求</h3><p>只是运行一个MC服务器，对英语水平的要求并不高，网上有大把的中文教程。如果使用面板服，一点英语不会都能开。但如果想自己开服、使用最新的插件、了解更多高价值的内容、或是出现一些疑难杂症，这些问题很难在中文论坛搜索到，掌握英语不仅能节省大量时间，也能帮助你快速解决问题。<br>正常初中英语水平+搜索引擎足以应付大多数问题，但对于非计算机专业方向的管理者，可能对于部分专业词汇会比较陌生，有兴趣可以针对性学习（大概100~200个）。</p>
+<blockquote>
+<p>注: 由于机器翻译的局限性，在翻译后反倒可能对读者造成干扰（例如 Player -&gt; 球员，Help -&gt; 救命 等），因此不建议进行全文机翻，对于不会的单词 可以使用 <em>划词翻译</em> 等工具辅助阅读。</p>
+</blockquote>
+<h3 id="网络知识要求"><a href="#网络知识要求" class="headerlink" title="网络知识要求"></a>网络知识要求</h3><p>如果使用的是面板或者租用的VPS，这部分知识不是特别重要。但如果想自己在家搭建服务器，则需要了解一些基本的网络知识。</p>
+<blockquote>
+<p>如果想深入了解，可以自行搜索相关资料学习。<br>熟悉以下概念：</p>
+</blockquote>
+<ul>
+<li>服务器</li>
+<li>IP (IPv4)*</li>
+<li>端口</li>
+<li>域名</li>
+<li>公网</li>
+<li>NAT</li>
+<li>端口映射</li>
+<li>代理<br>*由于中国大陆地区IPv6部署仍存在一些问题，因此本文暂不讨论此部分内容。</li>
+</ul>
+<h3 id="编程知识要求"><a href="#编程知识要求" class="headerlink" title="编程知识要求"></a>编程知识要求</h3><p>虽然开服<strong>不需要会编程</strong>，但如果有Java或其他语言的软件开发经验，对于排查、解决问题会有较大的帮助，并且自己也可以尝试编写插件。</p>
+<h3 id="国际互联网"><a href="#国际互联网" class="headerlink" title="国际互联网"></a>国际互联网</h3><p>由于安全网关的限制，在大陆访问境外网站速度可能非常慢，甚至无法正常访问。<br>虽然 MC服务端 运行并不需要国际互联网，但大部分有用的插件、资料基本都需要使用 Google 等搜索引擎才能检索（包括部分服务端第一次启动时也需要下载原版 Vanilla 核心）。<br>如果不能正常访问国际互联网，可能需要花更多的时间（甚至无法）解决问题。所以强烈建议能与国际互联网建立稳定的连接。  </p>
+<h3 id="搜索引擎与资源"><a href="#搜索引擎与资源" class="headerlink" title="搜索引擎与资源"></a>搜索引擎与资源</h3><p>由于高价值的资讯大部分集中在国外，并且大部分内容都是基于英语，国内搬运需要一定时间。<br>因此使用中文在X度上进行搜索时，搜出来的通常都是一些 X度贴吧，m*bbs这类网站，里面的资源可能是过时无效的二手信息。为了获取到最新的第一手信息，建议 <strong>使用英语</strong> 在 <strong>Google</strong> 进行搜索。<br>如果没有办法使用 Google ，可以考虑使用 微软的 Bing (国际版模式)，在中国大陆也可以正常搜索（但如果没有科学上网，可能搜索结果点进去也非常慢或者打不开）。</p>
+<h4 id="插件相关"><a href="#插件相关" class="headerlink" title="插件相关"></a>插件相关</h4><p><a target="_blank" rel="noopener" href="https://www.spigotmc.org/resources/">Spigot Resources</a><br><a target="_blank" rel="noopener" href="https://dev.bukkit.org/bukkit-plugins">Bukkit Plugins</a><br>一般搜索插件的英文名称，都可以在前几条看到这些网站。通常在这里发布的插件是最新的版本。<br>部分资源可能会发布在 Github 上，可以点击 Release 标签，找到最新的版本并下载。<br>拓展阅读 (英文):</p>
+<ol>
+<li>[Top 10 Minecraft plugins][Top 10 Minecraft plugins]</li>
+</ol>
+<hr>
+<h2 id="服务器类型选择"><a href="#服务器类型选择" class="headerlink" title="服务器类型选择"></a>服务器类型选择</h2><h3 id="服务端选择"><a href="#服务端选择" class="headerlink" title="服务端选择"></a>服务端选择</h3><p>目前主流的服务端有：</p>
+<ul>
+<li>官方原版 (官端) Vanilla </li>
+<li>Spigot -&gt; Paper<br>!&gt; 注: Spigot 特性与 Vanilla 未必一致，不适合”硬核”玩家<blockquote>
+<p>关于服务端的选择，网上有其他的教程，本文仅做简要说明，有兴趣可以自行搜索了解。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="拓展阅读-英文"><a href="#拓展阅读-英文" class="headerlink" title="拓展阅读 (英文):"></a>拓展阅读 (英文):</h4><ol>
+<li>你可以在 [bStats (<a target="_blank" rel="noopener" href="https://bstats.org/)][bstats]">https://bstats.org/)][bstats]</a> 查看全世界服务端、MC版本、系统、Java版本 的统计数据。</li>
+<li>关于 Java 和 Bedrock 服务端 的选择:<br>[Should you run a Minecraft Java Edition or Bedrock Edition server?][java_or_bedrock]</li>
+<li>关于选择 Paper 或 Spigot:<br>[Paper vs Spigot, which should you use?][Paper vs Spigot, which should you use?]</li>
+<li>「推荐阅读」Minecraft 多人游戏近十年的发展 [A Decade of Survival Multiplayer. Celebrating the first 10 years of the Minecraft Multiplayer Community][decade-of-minecraft-multiplayer]</li>
+</ol>
+<details>
+<summary>关于各个版本 (点击展开折叠)</summary>
+因为版权相关原因（有兴趣的可以自己网上查），CraftBukkit 在2014年后 不再更新。  
+Spigot 是 Bukkit API 的实现，也是目前主流的服务端，可以使用基于 Bukkit API 开发的插件。  
+Paper 是在 Spigot 基础上进行开发和优化，支持更多的功能，也是目前主流的服务端 。（注意，Paper 理论支持 Spigot 的所有插件，但 Spigot 并不一定支持使用 Paper API 的插件）  
+> 「2020-06-08」PaperMC 决定 [修正原版的一部分 Bug][TNT Duping or Bedrock Breaking issues? READ ME]，包括但不限于禁止 破基岩、刷地毯/TNT 等，虽然官方目前提供了配置项 ``unsupported-settings`` 进行配置，但未来可能不再支持一些影响游戏平衡的特性(Bug)。  
+
+<p><del>[Tuinity][Tuinity] 是目前基于 Paper 的一个服务端，开发者是 Paper 团队的成员，开发团队生成称进行了更加深度的优化(光照与区块生成等)，能提升多玩家在线时的性能。由于目前还在开发中，可能会出现一些Bug（暂时还没遇到），如果对性能有一定追求，且有一定解决问题的能力，可以考虑使用此服务端。</del><br>!&gt; Tuinity 已停止更新</p>
+<p>Mod端则有 Forge、Sponge 和新出的 Fabric，对mod端不熟悉，无法进行详细的说明，还请见谅。</p>
+</details>
+
+
+<h3 id="正版与盗版"><a href="#正版与盗版" class="headerlink" title="正版与盗版"></a>正版与盗版</h3><p>目前Minecraft官网已经支持支付宝购买，并且还有一些(非法)渠道可以获取到正版，正版基本已经满地都是，建议优先选择开正版服。</p>
+<h3 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h3><p>是否开启白名单取决于服务器自身的状况。<br>!&gt; 注意，开启白名单≠玩家素质变高，玩家素质主要取决于白名单的审核标准<br>以自己管理过的服为例，开启白名单后，出现恶性事件的数量会显著低于无白名单的服务器。但玩家数量也会较少，并且管理员需要额外精力处理玩家的白名单申请。<br>由于近年来出现了非法的免费正版账号获取服务，正版账号的获取门槛变得极低，所以单纯的正版验证其实没办法阻挡恶意玩家。</p>
+<hr>
+<h2 id="开服成本控制"><a href="#开服成本控制" class="headerlink" title="开服成本控制"></a>开服成本控制</h2><p>开服务器最主要的问题就是钱，没有钱服务器就开不下去，这是最现实的一个问题。所以对于服务器的成本控制，也是一件需要注意的事情。</p>
+<h3 id="面板与租用VPS"><a href="#面板与租用VPS" class="headerlink" title="面板与租用VPS"></a>面板与租用VPS</h3><p>价格上 面板服&lt; 租用 VPS ，但 面板服 的 “可玩性” 没有VPS高，并且某些地方可能阉割严重，甚至无法带满额定玩家。</p>
+<p>之前遇到过某服务提供商标称25人，实际进入5人后，一旦玩家分散开，由于硬盘IO性能差、CPU垃圾 导致的 区块读取和加载缓慢 使得服务器的 TPS 剩下个位数，完全无法正常游戏。</p>
+<p>如果需要使用 VPS，则价格就会相对较高一些。并且对于技术有一定要求（虽然网上教程也是满地都是），具体的价格可以去某宝搜索关键字： minecraft + VPS 。某宝看了某个口碑较好的商家，通常最低配置一年下来，也需要近千元的开销。并且还可能有无良商家超售，导致实际性能和稳定性更差。</p>
+<p>因为 Minecraft 服务端（指 Java 版）优化欠佳的原因，在 X里云，腾X云等云服务提供商 租用服务器并不划算，不仅价格较高，并且游戏体验也好不到哪里去。当然如果只是玩玩，可以用学生机之类的体验MC开服，一个月10块钱，足够和几个朋友玩玩纯净了。（需要了解 Linux 的基本使用）</p>
+<p>使用租用的虚拟服务器，也要考虑倒闭或跑路的问题，数据安全较没有保障。并且成本也比较高。所以可以考虑自建服务器。有条件的可以托管给当地机房。</p>
+<h3 id="自建服务器"><a href="#自建服务器" class="headerlink" title="自建服务器"></a>自建服务器</h3><blockquote>
+<p>注意：这里指的是自己购买硬件，并且使用家用宽带开服。不包括托管<br>对于长期开放的服务器，虽然自建服务器的前期投入成本相比租用会高得多，但每个月平摊下来，最后的每月成本相比租用的服务器就有明显优势 <del>（不开服了还能装块显卡打游戏）</del><br>自建服务器的成本主要有：</p>
+</blockquote>
+<ol>
+<li>硬件费用（主要）</li>
+<li>电费 </li>
+<li>带宽费用 </li>
+<li>时间成本<br>自建服务器的问题: </li>
+<li>电源稳定性 (可以额外使用 UPS 电源)</li>
+<li>网络连接质量 （可以通过反向代理）</li>
+<li>软硬件维护 （需要一定的计算机硬件知识）<br>由于Minecraft服务器的特殊性质，硬件的选择会和普通的“服务器”主机有所不同，下文会对硬件的选择进行详细说明。</li>
+</ol>
+<hr>
+<h2 id="配置要求"><a href="#配置要求" class="headerlink" title="配置要求"></a>配置要求</h2><h3 id="硬件选择"><a href="#硬件选择" class="headerlink" title="硬件选择"></a>硬件选择</h3><p>Minecraft 服务端对于单核性能要求较高，且无法完全利用多核处理器。因此于多核心低频的服务器 CPU，游戏体验可能会不如单核高频的家用消费级 CPU<br>作为MC服务器通常不需要特别强的显卡，如果 CPU 没有核显，且没有特殊需求时，使用亮机卡即可。</p>
+<blockquote>
+<p>注意: 如果能远程管理，亮机卡也不一定需要，但如果出现问题时，有亮机卡可以较快排除故障。<br>因此硬件的选择方向为：</p>
+</blockquote>
+<ul>
+<li>单核性能强的CPU </li>
+<li>较大的内存容量（频率影响较小，下文将会说明）</li>
+<li>大容量 SSD</li>
+<li>显卡能点亮即可（如果需要配备屏幕）</li>
+</ul>
+<h4 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h4><p>MC端大约能使用4~6个左右的核心&#x2F;线程，对于单核性能要求较高。多核心处理器能够同时运行多个群组服，但单核主频过低可能导致单个服务器高负载时出现性能问题。<br>目前主流的看法是选择家用平台的高频处理器。外国论坛也有用户声称使用锐龙处理器有性能提升，而一般用于服务器平台的志强处理器虽然多核心，但单核频率低，反倒不适合用来开MC服务器。</p>
+<blockquote>
+<p>对于虚拟化后出租的这类用途，服务器处理器或许体验会更好些，不在本文的讨论范围之内。</p>
+</blockquote>
+<h5 id="超频-Overclocking"><a href="#超频-Overclocking" class="headerlink" title="超频 (Overclocking)"></a>超频 (Overclocking)</h5><p><strong>！警告：超频有风险，可能导致硬件永久损坏！</strong></p>
+<p>至于是否超频，取决于每个服务器自身的需求（以及个人技术）。<br>由于服务端对单核性能要求较高，所以超频<strong>理论上</strong>能够提升MC服务端性能。<br>一般建议能保持睿满即可，如果对自己技术有信心可以尝试继续往上超频，但稳定性还是最重要的，超频后请至少烤机半小时测试。<br>散热器的选择可以通过CPU的发热和服务器的需求去判断。<br>个人认为没有必要超频，也<strong>不建议使用水冷</strong>。  </p>
+<h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><p>根据外国用户的测试，内存频率 对于MC服务端的性能没有明显的影响。</p>
+<blockquote>
+<p>“我有点关心内存频率是否会影响mc端的性能，所以我跑了些测试，虽然测试不是很严谨，不过看起来内存频率不像CPU频率那样有显著影响”<br>I run some tests, I was curious if RAM speed does matter for spigot performance. Test were not very accurate but it seems RAM speed don’t have influence on spigot performance, unlike CPU frequency. —— Gerolf，Apr 27, 2019</p>
+</blockquote>
+<p>至于内存容量，建议单个服务器至少分配 2~4G 的堆空间，具体用量需要视服务器情况决定。<br>建议 Host 机内存容量在 16GB 以上</p>
+<h5 id="参考资料-英文-："><a href="#参考资料-英文-：" class="headerlink" title="参考资料 (英文)："></a>参考资料 (英文)：</h5><ul>
+<li>内存频率是否影响性能？[Spigot-Does RAM frequency impacts spigot performance?][Does-RAM-frequency-impacts-spigot-performance?]</li>
+<li>需要更快的内存吗？[Spigot-Do we really need faster memory?][Do we really need faster memory?]</li>
+</ul>
+<h4 id="磁盘选择"><a href="#磁盘选择" class="headerlink" title="磁盘选择"></a>磁盘选择</h4><p>目前主流的硬盘类型有 SSD (固态硬盘) 和 HDD (机械硬盘)。<br>强烈建议将系统、常用软件和 Minecraft 服务端放在 SSD 上， HDD 在 IO 负载较大时，会导致 TPS 大幅下降&#x2F;读取区块的速度变得非常慢，严重影响游戏体验。<br>如果使用 MySQL ，也建议将数据库放置在 SSD 上。<br>HDD 则可以用作数据备份盘，用来备份服务端等数据。<br>至于容量，目前 240G 已足够大部分情况使用（存放系统文件、数据库），并且价格也不贵，如果不够，可以后续再加个更大的盘，旧的盘也可以用来存其他的数据。  </p>
+<ul>
+<li>(大部分数据都是跑图出来的，如果有资源世界定期换档，应该可以有效减少地图大小)<br>关于硬盘详细参数的选择(容量、协议、缓存、颗粒&#x2F;叠瓦等)，取决于服务器需求(和钱包)，并且网上已有足够的资料，这里不再赘述。  <blockquote>
+<p>注: 以下场景未经严格测试，仅供参考</p>
+</blockquote>
+</li>
+<li>使用内存盘进行开服，体验与普通的 SSD 相比没有显著区别。  </li>
+<li>低端（sata，无缓存） SSD 在游戏体验感知上与 高端 SSD （nvme，DRAM）对比没有显著区别。</li>
+</ul>
+<h4 id="UPS-不间断电源"><a href="#UPS-不间断电源" class="headerlink" title="UPS 不间断电源"></a>UPS 不间断电源</h4><p>如果不能保证稳定的供电，建议配备ups不间断电源，以避免突然断电导致数据丢失。<br>UPS 的规格 视用电设备和需求决定</p>
+<h3 id="操作系统选择"><a href="#操作系统选择" class="headerlink" title="操作系统选择"></a>操作系统选择</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><blockquote>
+<p>注意：对于Windows Server  和 Windows 10，可能会自动重启安装更新，需要自行设置更新策略<br>新手可以考虑使用 Windows 进行开服，操作和维护上也会较为方便。<br>如果只是开 MC 服，一般不用太在意 Consumer 版或 Server 版。<br>其实用 Win10 开服也无所谓，不过最好是修改 组策略 的 自动更新策略 为 手动更新。</p>
+</blockquote>
+<h4 id="Linux-发行版"><a href="#Linux-发行版" class="headerlink" title="Linux 发行版"></a>Linux 发行版</h4><blockquote>
+<p>Linux 上开服也不难，有兴趣建议尝试一下。<br>对于初学者，个人建议使用 Ubuntu，教程相对丰富。</p>
+</blockquote>
+<h4 id="系统位数"><a href="#系统位数" class="headerlink" title="系统位数"></a>系统位数</h4><p>目前绝大部分情况下使用64位即可，在某些特殊情况下可能必须使用32位的 JVM，但通常会有明显的提示。</p>
+<h3 id="插件选择"><a href="#插件选择" class="headerlink" title="插件选择"></a>插件选择</h3><p>插件的选择取决于服务器类型，几个比较常见的：</p>
+<ol>
+<li>CoreProtect <ul>
+<li>记录、回档玩家操作</li>
+<li>基本算是必装的插件</li>
+</ul>
+</li>
+<li>WorldEdit<ul>
+<li>创世神插件，应该也算必装的管理类插件了</li>
+</ul>
+</li>
+<li>ViaVersion<ul>
+<li>允许更高版本的客户端加入服务器</li>
+</ul>
+</li>
+<li>LuckPerms （权限管理）</li>
+</ol>
+<p>拓展阅读(英文):<br>[Top 10 Minecraft Server Plugins][Top 10 Minecraft plugins]</p>
+<p><strong>不建议使用自动备份插件</strong><br>​<br>1.14 之后 Paper 服务端 的保存方式出现变化，<strong>不要使用</strong>任何关于保存、备份的插件，可能导致存档损坏。</p>
+<p>关于备份可见下文 服务器维护 备份部分</p>
+<h4 id="开源插件"><a href="#开源插件" class="headerlink" title="开源插件"></a>开源插件</h4><p>部分插件会公开源代码，任何人都可以查看。相比闭源（不公开源码）插件，开源插件的安全性会较高一些。</p>
+<p><strong>注意：开源不等于绝对安全，请在正规渠道下载可信的插件。</strong></p>
+<h4 id="付费插件"><a href="#付费插件" class="headerlink" title="付费插件"></a>付费插件</h4><p>引用文章<br>部分插件可能需要付费，但部分服主可能不愿意花钱，选择从一些特殊渠道下载破解后的插件。<br>破解插件的主要风险：</p>
+<ol>
+<li>不安全，可能被加入后门<ul>
+<li><del>可以反编译去审查代码，会很累…</del><ul>
+<li>如果遇到混淆可能会更加头疼</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>作者可能设置了逻辑炸弹<ul>
+<li>有传闻出现过某服务器使用了盗版插件，导致整个服务器数据都被删除的事件。<br>因此建议通过正规方式获取插件。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Java-的选择"><a href="#Java-的选择" class="headerlink" title="Java 的选择"></a>Java 的选择</h3><h4 id="Oracle-JDK-商业授权"><a href="#Oracle-JDK-商业授权" class="headerlink" title="Oracle JDK 商业授权"></a>Oracle JDK 商业授权</h4><p>Oracle JDK 在 Java8u211 版本后变更了协议，<a target="_blank" rel="noopener" href="https://www.oracle.com/hk/java/technologies/javase/javase8u211-later-archive-downloads.html">仅限个人和开发用途使用</a>。<br>为避免不必要的麻烦，可以考虑使用第三方 JVM 进行开服<br>参考资料：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://adoptium.net/">Adoptium (https://adoptium.net/)</a></li>
+<li><a target="_blank" rel="noopener" href="https://openjdk.java.net/">OpenJDK (https://openjdk.java.net/)</a></li>
+</ul>
+<h4 id="Java-版本"><a href="#Java-版本" class="headerlink" title="Java 版本"></a>Java 版本</h4><p>Java的版本目前分为 长期支持(LTS) 和 快速发布版本，建议服务器使用 LTS （长期支持版本）。<br>可以同时安装多个版本的 Java，按需选择合适的版本。</p>
+<blockquote>
+<p>注: 1.17版本 必须 使用 Java 16 或以上<br>截至2023.11月，Java版本占有率(bStats统计数据)：Java17 (70%)，Java8 (10%) ,其他 (20%)<br>由于 Java9 及之后的版本 移除了一些API 和 限制反射(可配置关闭)，因此Mod服和部分远古插件<strong>可能无法正常工作</strong>。<br>1.12~1.16.5版本，建议选择 Java11 (如果有问题可以回退 8 )</p>
+</blockquote>
+<p>1.17+ ，使用 最新版本</p>
+<p>如果对最新技术感兴趣、愿意折腾，也可以使用最新的版本跑旧版本MC端（但可能无法正常工作）。</p>
+<blockquote>
+<p>注: Java13 及之后版本优化了 ZGC 的实现，可提升垃圾回收时的性能，有兴趣可以参考下文 性能优化 部分</p>
+</blockquote>
+<h4 id="JVM-的选择"><a href="#JVM-的选择" class="headerlink" title="JVM 的选择"></a>JVM 的选择</h4><blockquote>
+<p>OpenJ9 已停止更新，以下内容不再适用</p>
+</blockquote>
+<details>
+<summary>关于OpenJ9</summary>
+
+<p>目前主流的 JVM 实现 有 HotSpot 和 OpenJ9<br>HotSpot 是目前广泛使用的 JVM 实现，而 OpenJ9 相比 HotSpot ，进行了性能的优化，内存占用也更低，但可能会出现一些小问题。</p>
+<blockquote>
+<p>注: </p>
+<ol>
+<li>一些 Mod端 可能不支持 OpenJ9（会报错提示不支持）。</li>
+<li>Vanilla 在 OpenJ9 下似乎会出现激进的垃圾回收，CPU占用特别高的问题， 因此只能使用HotSpot，并且不能配置ZGC。</li>
+</ol>
+</blockquote>
+</details>
+
+<hr>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><p>大部分插件使用 SQLite 进行数据存储，部分插件会要求使用 MySQL 等数据库。 </p>
+<p>至于 CoreProtect 要不要使用 MySQL ，取决于数据量大小。  </p>
+<p>如果玩家较少，或数据量不多，使用 SQLite 即可。  </p>
+<p>但对于玩家较多，或想保留较久记录的用户，建议使用 MySQL，可大幅提升查询性能。  </p>
+<p>个人建议是有条件就上 MySQL。  </p>
+<p>MySQL 的数据存储位置推荐放到 SSD 上，可大幅提升性能。  </p>
+<p>如果使用非本地 MySQL，响应速度可能变慢。  </p>
+<p>由于 CoreProtect 数据量较大，如果玩家较为活跃，可能导致单表 (主要是 blocks 和 containers 表) 千万甚至上亿的数据量，建议准备 50G 及以上的空间  </p>
+<ul>
+<li>对于单表千万或亿级数据，推荐在配置文件中设置一个较大的 Buffer 内存，以避免进行部分操作时失败。（默认是 8M，可以设置为 1G）  </li>
+<li><code>innodb_flush_log_at_trx_commit</code> 则取决于业务要求，主要存储 CoreProtect 数据、有UPS，并且就算丢失一点记录问题也不大，可以设置为 0，如果对数据安全有一定要求也可设置为 2 或 1。</li>
+</ul>
+<p>拓展阅读 (英语) :</p>
+<ol>
+<li>[Should you use MySQL with a Minecraft plugin?][Should you use MySQL with a Minecraft plugin?]</li>
+</ol>
+<h3 id="服务器网络架构："><a href="#服务器网络架构：" class="headerlink" title="服务器网络架构："></a>服务器网络架构：</h3><p>通常个人开服都是一台机子运行一个或多个服务端，这里主要介绍单机运行，关于多台服务器运行多个服务端，可使用 BungeeCord&#x2F;Velocity 进行配置。</p>
+<h3 id="单mc端："><a href="#单mc端：" class="headerlink" title="单mc端："></a>单mc端：</h3><p>这是最常见的情况，只运行一个服务端。应该没什么好说的（<br>如果运行了多个服务端，但并没有关联，也可以看作是运行单个服务端，只是端口不同。</p>
+<h4 id="BungeeCord-Velocity-群组网络"><a href="#BungeeCord-Velocity-群组网络" class="headerlink" title="BungeeCord &#x2F; Velocity 群组网络"></a>BungeeCord &#x2F; Velocity 群组网络</h4><p>如果想要将多个服务器连接在一起，可以使用 BungeeCord 等反向代理，对外只需暴露一个端口，即可让玩家在服务器内进行各个子服的切换。<br>使用这种方法，也可以将各个子服务端到不同的物理服务器上，减少单台服务器的压力。<br>!&gt; 注: 使用 BungeeCord 时请注意子服的安全问题，子服需限制允许通过BC加入的IP，避免后端服务器被直接连接。<br>Velocity 据称解决了BC的安全性和性能问题，有兴趣可以到官网(英语)阅读。<br>Velocity 相比 Bungeecord，还支持使用了 Forge，Fabric 的其他服务端在同一个群组网络中。Paper 目前已经支持 Velocity。</p>
+<blockquote>
+<p>数据包会全部通过 BungeeCord 进行转发，可将BC设置到网络较好的服务器上为玩家提供良好的连接。（但不推荐这么做，因为后端还需要暴露端口，建议使用TCP转发、反向代理方案实现）<br>如果配置了 TCP 转发、未设置 IP-forwarding ，IP可能会全部变成反代服务器的 IP，需要单独设置转发时带上原始 IP 地址。</p>
+</blockquote>
+<h3 id="网络要求"><a href="#网络要求" class="headerlink" title="网络要求"></a>网络要求</h3><p>服务器带宽的选择，取决于视距、同时在线人数和玩家的行为。<br>家用宽带20~40Mbps的上行基本可以应付中小型服务器日常需求。</p>
+<h4 id="公网、内网、端口映射"><a href="#公网、内网、端口映射" class="headerlink" title="公网、内网、端口映射"></a>公网、内网、端口映射</h4><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><p>如果有公网IP，可以允许玩家直连（通常情况下，家用网络要在路由器上配置端口映射）。<br>如果没有，则需要另一台有 公网IP 的机子（一般是云服务器）以反向代理的方式开放连接。<br>对于大部分家用宽带开服的用户，可能没有公网 IP，较大程度上增加了开服的难度。有公网 IP 的用户可能也会遇到玩家反映连接质量差、延迟高、经常掉线等问题。可以使用反向代理，通过 TCP 转发的方式进行加速。<br>关于 TCP 反向代理的方案有挺多种，可以使用 Nginx 、FRP 等软件进行反向代理，也可以使用第三方提供的反向代理服务。<br>通过反向代理，可以解决没有公网 IP、跨运营商&#x2F;海外玩家连接质量差的问题。<br>注意：</p>
+<ul>
+<li>如果没有进行适当配置，服务端获取的玩家 IP 会全部变成反代服务器的 IP。</li>
+<li>反代服务器的带宽可能成为瓶颈</li>
+</ul>
+<ul>
+<li>关于后端获取真实IP，需要配置 <code>proxy_forward</code><br>反向代理可以使用 FRP 等软件自建，或者使用一些商业服务。</li>
+</ul>
+<h4 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h4><p>对于购买云服务或托管的服务器，IP 通常都是固定的。但家用宽带开服时，由于运营商的限制，家宽的公网 IP 通常都会不定期变化，因此需要使用 DDNS，将域名解析到最新的 IP 地址上。<br>注意事项：</p>
+<ol>
+<li>玩家可能在 IP 变化时断线</li>
+<li>玩家在 IP 变化后一段时间内，可能无法连接上服务器<ul>
+<li>对于此问题，可以让玩家更换 DNS 到 <code>114.114.114.114</code>  或  <code>223.5.5.5</code> 等大型DNS上，更新会比较及时。或强制刷新 DNS 缓存。<ul>
+<li>部分 ISP 会劫持 DNS 请求，可能需要 DOT 或 DOH 等方案</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>亦可使用反向代理等方式实现更稳定的网络连接。</p>
+<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><h5 id="SRV记录"><a href="#SRV记录" class="headerlink" title="SRV记录"></a>SRV记录</h5><p>可以通过 SRV 记录来隐藏服务器端口号，也可实现网站与 MC 同一个域名，便于玩家记忆和输入。<br>例如:<br>隐藏端口：SRV <code>server.example.com:25565</code> -&gt; <code>mc.example.com</code><br>网站游戏同域名：<br>网站A记录： <code>www.example.com</code><br>游戏A记录：<code>server1.example.com</code><br>游戏SRV记录： <code>www.example.com</code> -&gt; <code>server1.example.com</code><br>具体操作可自行参照网上教程。</p>
+<h5 id="智能解析"><a href="#智能解析" class="headerlink" title="智能解析"></a>智能解析</h5><p>如果 DNS 提供商 有提供智能解析功能，可以实现根据不同 ISP 解析到不同地址等操作。<br>关于此类解析，请自行参照 DNS 解析服务商提供的教程。</p>
+<h4 id="其他特殊代理"><a href="#其他特殊代理" class="headerlink" title="其他特殊代理"></a>其他特殊代理</h4><p>目前出现了一些特殊的代理 ( DragonProxy(已停止更新)、Geyser 等) ，通过在连接时对协议进行翻译，可以实现 基岩版客户端 进入 Java 版服务器的功能。<br>截至 2021.06 ，1.16.5版本，这类代理可以在一定程度上进行游戏，但部分功能可能缺失，且与反作弊可能不兼容。有兴趣可以自行深入了解。</p>
+<blockquote>
+<p>注: 此方案需要通过代理本身进行正版验证，因此有潜在的安全风险。</p>
+<ol>
+<li>服务器本身接收明文的账号密码，可能被第三方记录。</li>
+<li>相同 IP 登录大量账户可能会导致账号被 Mojang 封禁</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="管理相关"><a href="#管理相关" class="headerlink" title="管理相关"></a>管理相关</h2><h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>大部分故障一般都很明显，会直接在后台打印出红色的错误信息。通常这类错误信息会包含插件的名称，以及错误的内容。对于一些说明不清楚的错误，使用搜索引擎一般都能找到解决方法。</p>
+<blockquote>
+<p>更新插件&#x2F;服务端通常可以解决大部分问题，另一些问题可能是配置文件错误，亦或者插件本身就有问题。<br>对于没有编程经验的用户，以下是分析错误信息的样例：</p>
+</blockquote>
+<details>
+<summary>排错案例参考 (点击展开折叠)</summary>
+
+<p>这是一份异常样例（省略部分堆栈内容）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[WARN]: java.sql.SQLException: [SQLITE_ERROR] SQL error or missing database (table co_container has no column named meta)</span><br><span class="line">[WARN]: at org.sqlite.DB.newSQLException(DB.java:383)</span><br><span class="line">[WARN]: at org.sqlite.Conn.prepareStatement(Conn.java:383)</span><br><span class="line">[WARN]: at net.coreprotect.database.Database.prepareStatement(Database.java:205)</span><br><span class="line">[WARN]: at net.coreprotect.database.Database.prepareStatement(Database.java:236)</span><br><span class="line">[WARN]: at net.coreprotect.consumer.Process.processConsumer(Process.java:52)</span><br><span class="line">[WARN]: at net.coreprotect.consumer.Consumer.run(Consumer.java:48)</span><br><span class="line">[WARN]: at java.lang.Thread.run(Thread.java:745)</span><br><span class="line">[WARN]: java.lang.NullPointerException</span><br><span class="line">[WARN]: at net.coreprotect.consumer.Process.processConsumer(Process.java:147)</span><br><span class="line">[WARN]: at net.coreprotect.consumer.Consumer.run(Consumer.java:48)</span><br><span class="line">[WARN]: at java.lang.Thread.run(Thread.java:745)</span><br></pre></td></tr></table></figure>
+
+<p>以上内容叫做 “异常信息”（”堆栈跟踪”） ，通常会在服务端或插件运行错误时显示在控制台。<br>第一行说明了 异常 的 类型 和 内容，在底下的信息中也可以看到有 CoreProtect 的字样，可以合理判断以下信息：  </p>
+<ul>
+<li>异常插件：<code>CoreProtect</code></li>
+<li>异常类型：<code>java.sql.SQLException</code></li>
+<li>异常信息： [SQLITE_ERROR] SQL error or missing database (table co_container has no column named meta)</li>
+</ul>
+<p>按以上的信息作为关键词搜索，可以找到这个解决方案：  </p>
+<blockquote>
+<p>关键词:<br> CoreProtect SQLException SQL error or missing database (table co_container has no column named meta)</p>
+<p>—-搜索结果—–</p>
+<p>网页：<br><a target="_blank" rel="noopener" href="https://dev.bukkit.org/projects/coreprotect/issues/809">#809 SQL exception - Issues - CoreProtect - Bukkit Plugins</a></p>
+<p>信息：<br>Try creating a new database (delete your database.db file and restart your server). —— intelli posted a comment Jul 19, 2018</p>
+</blockquote>
+<p>可以发现已经有用户提出了相同的问题，解决方法是删掉原来的database.db文件，重启服务器。  </p>
+</details>
+> 注意：很多情况下异常信息里就包含了解决方案，因此大部分问题一般可以轻松解决。但对于一些疑难杂症，不一定能直接找到有效的方案，请保持耐心，尝试一些不同的关键词和方案，或者向他人求助。 (记得附上详细的说明和日志哦)  
+
+<h3 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h3><p>!&gt; MC端大版本更新前一定要备份<br>不建议 MC跟着大版本立即更新  </p>
+<ol>
+<li>插件跟不上</li>
+<li>可能有恶性 bug（刷物品等）<br>建议等 1~2 个小版本后再更新确保稳定。<blockquote>
+<p>可以使用 <a target="_blank" rel="noopener" href="https://github.com/ViaVersion/ViaVersion">ViaVersion</a> 等方案允许玩家使用高版本客户端加入低版本服务器。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="提前测试"><a href="#提前测试" class="headerlink" title="提前测试"></a>提前测试</h4><p>为了保证顺利进行更新，避免出现操作失误或其他问题而回退，可以在本地先进行测试演练。</p>
+<p>Cloudflare for SSH, RDP and Minecraft<br>2020&#x2F;04&#x2F;14<br><a target="_blank" rel="noopener" href="https://blog.cloudflare.com/cloudflare-for-ssh-rdp-and-minecraft/">https://blog.cloudflare.com/cloudflare-for-ssh-rdp-and-minecraft/</a></p>
+<h3 id="性能优化："><a href="#性能优化：" class="headerlink" title="性能优化："></a>性能优化：</h3><h4 id="JVM-优化"><a href="#JVM-优化" class="headerlink" title="JVM 优化"></a>JVM 优化</h4><p>关于OpenJ9的调优(英文) :<br><a target="_blank" rel="noopener" href="https://steinborn.me/posts/tuning-minecraft-openj9/">https://steinborn.me/posts/tuning-minecraft-openj9/</a></p>
+<ul>
+<li>注：此文章是 G1GC 的方案，Java 14 以后 可以考虑使用 ZGC</li>
+</ul>
+<p>配置 ZGC (英文):<br><a target="_blank" rel="noopener" href="https://krusic22.com/2020/03/25/higher-performance-crafting-using-jdk11-and-zgc/">https://krusic22.com/2020/03/25/higher-performance-crafting-using-jdk11-and-zgc/</a><br>ZGC | Using -XX:SoftMaxHeapSize - 02 Jul 2020:<br><a target="_blank" rel="noopener" href="https://malloc.se/blog/zgc-softmaxheapsize">https://malloc.se/blog/zgc-softmaxheapsize</a></p>
+<p>注: 在使用 Vanilla &#x2F; Fabric 时，如果使用 OpenJ9 或启用了 ZGC ，会出现频繁的垃圾回收导致CPU占用100%，无法正常工作。</p>
+<h4 id="JVM-启动参数"><a href="#JVM-启动参数" class="headerlink" title="JVM 启动参数"></a>JVM 启动参数</h4><p>以下是服务器的启动参数（感谢 NyaaCat 的 phoenixlzx 指导）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础配置项，启用JVM实验性选项、日志打印等，以及允许不安全反射（Java9 之后限制了非法反射）</span></span><br><span class="line">COMMIN_PARAM=<span class="string">&quot;-XX:+IgnoreUnrecognizedVMOptions \</span></span><br><span class="line"><span class="string">-XX:+UnlockExperimentalVMOptions \</span></span><br><span class="line"><span class="string">-XX:+DisableExplicitGC \</span></span><br><span class="line"><span class="string">-XX:+ParallelRefProcEnabled \</span></span><br><span class="line"><span class="string">-XX:+UnlockDiagnosticVMOptions \</span></span><br><span class="line"><span class="string">-XX:+UseGCOverheadLimit \</span></span><br><span class="line"><span class="string">-XX:+ShowCodeDetailsInExceptionMessages \</span></span><br><span class="line"><span class="string">--illegal-access=warn&quot;</span></span><br><span class="line"><span class="comment"># 配置ZGC</span></span><br><span class="line"><span class="comment"># NyaaCat 的 phoenixlzx 老师意见是为MC分配全部资源，不配置 Uncommit。</span></span><br><span class="line"><span class="comment"># 这里由于我所在的服务器大部分时间玩家不多，只有活动期间会有大量玩家进入，如果分配较大内存会有浪费。</span></span><br><span class="line"><span class="comment"># 所以设置一个 SoftMaxHeapSize 容量为日常的峰值，并配置了内存 Uncommit，用于在压力降低后返还内存给 Host 机。</span></span><br><span class="line"><span class="comment"># 这里有一个默认参数 -XX:ZUncommitDelay 为 300s</span></span><br><span class="line"><span class="comment"># 注意 ZGC 的 Uncommit 可能会消耗大量性能 ： Note that committing and uncommitting memory are relatively expensive operations. A too aggressive (short) uncommit delay will just cause uncommitted memory to very soon be committed again, which can be a waste of CPU cycles and might in the end also impact the overall performance of your application.</span></span><br><span class="line">ZGC=<span class="string">&quot;-XX:+UseZGC -XX:+ZUncommit -XX:SoftMaxHeapSize=<span class="variable">$&#123;NORMAL_HEAP_SIZE&#125;</span> &quot;</span></span><br><span class="line"><span class="comment"># 此部分为 X86 架构处理器下的性能优化，经过TNT压测作为测试对照，性能有显著提升。</span></span><br><span class="line">X86_OPTMIZE=<span class="string">&quot;-XX:+UseCMoveUnconditionally \</span></span><br><span class="line"><span class="string">-XX:+UseFPUForSpilling \</span></span><br><span class="line"><span class="string">-XX:+UseNewLongLShift \</span></span><br><span class="line"><span class="string">-XX:+UseVectorCmov \</span></span><br><span class="line"><span class="string">-XX:+UseXMMForArrayCopy \</span></span><br><span class="line"><span class="string">-XX:+UseXmmI2D \</span></span><br><span class="line"><span class="string">-XX:+UseXmmI2F \</span></span><br><span class="line"><span class="string">-XX:+UseXmmLoadAndClearUpper \</span></span><br><span class="line"><span class="string">-XX:+UseXmmRegToRegMoveAll&quot;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://angelkawaii2.github.io/blog/2020/01/01/Minecraft-Server-Managements/" data-id="cm49vqiv80001bqqjd5cv9uk0" data-title="Minecraft 服务器维护与管理经验" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Minecraft/" rel="tag">Minecraft</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BB%B4%E6%8A%A4/" rel="tag">维护</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/06/15/%E7%8E%B0%E4%BB%A3%E6%99%BA%E6%85%A7%E7%94%9F%E6%B4%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          现代智慧生活
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/WWDC/">WWDC</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Action/" rel="tag">Action</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Apple/" rel="tag">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/DJI/" rel="tag">DJI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/GPT/" rel="tag">GPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HDR/" rel="tag">HDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mastodon/" rel="tag">Mastodon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Minecraft/" rel="tag">Minecraft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MtF/" rel="tag">MtF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/OPPO/" rel="tag">OPPO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Smartphone/" rel="tag">Smartphone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Vision-Pro/" rel="tag">Vision Pro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/" rel="tag">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iPad/" rel="tag">iPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iPhone/" rel="tag">iPhone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/" rel="tag">人际关系</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/" rel="tag">发布会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%A4%A7%E7%96%86/" rel="tag">大疆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/" rel="tag">平板电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BD%B1%E8%AF%84/" rel="tag">影评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" rel="tag">我的世界</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%89%8B%E6%9C%BA/" rel="tag">手机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%91%84%E5%BD%B1/" rel="tag">摄影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B6%88%E8%B4%B9%E7%94%B5%E5%AD%90/" rel="tag">消费电子</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BA%A4/" rel="tag">社交</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93/" rel="tag">社交媒体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A4%BE%E4%BC%9A/" rel="tag">社会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%A7%91%E6%8A%80/" rel="tag">科技</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%B4%E6%8A%A4/" rel="tag">维护</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%8B%B9%E6%9E%9C/" rel="tag">苹果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AF%84%E6%B5%8B/" rel="tag">评测</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%B7%A8%E6%80%A7%E5%88%AB/" rel="tag">跨性别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA/" rel="tag">运动相机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%AB%98%E8%80%83/" rel="tag">高考</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/AI/" style="font-size: 10px;">AI</a> <a href="/blog/tags/Action/" style="font-size: 10px;">Action</a> <a href="/blog/tags/Android/" style="font-size: 10px;">Android</a> <a href="/blog/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/blog/tags/DJI/" style="font-size: 10px;">DJI</a> <a href="/blog/tags/GPT/" style="font-size: 10px;">GPT</a> <a href="/blog/tags/HDR/" style="font-size: 16.67px;">HDR</a> <a href="/blog/tags/Mastodon/" style="font-size: 10px;">Mastodon</a> <a href="/blog/tags/Minecraft/" style="font-size: 10px;">Minecraft</a> <a href="/blog/tags/MtF/" style="font-size: 10px;">MtF</a> <a href="/blog/tags/OPPO/" style="font-size: 10px;">OPPO</a> <a href="/blog/tags/Smartphone/" style="font-size: 10px;">Smartphone</a> <a href="/blog/tags/Vision-Pro/" style="font-size: 10px;">Vision Pro</a> <a href="/blog/tags/iOS/" style="font-size: 16.67px;">iOS</a> <a href="/blog/tags/iPad/" style="font-size: 10px;">iPad</a> <a href="/blog/tags/iPhone/" style="font-size: 13.33px;">iPhone</a> <a href="/blog/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/" style="font-size: 10px;">人际关系</a> <a href="/blog/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/" style="font-size: 10px;">发布会</a> <a href="/blog/tags/%E5%A4%A7%E7%96%86/" style="font-size: 10px;">大疆</a> <a href="/blog/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/blog/tags/%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91/" style="font-size: 10px;">平板电脑</a> <a href="/blog/tags/%E5%BD%B1%E8%AF%84/" style="font-size: 13.33px;">影评</a> <a href="/blog/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="font-size: 10px;">我的世界</a> <a href="/blog/tags/%E6%89%8B%E6%9C%BA/" style="font-size: 16.67px;">手机</a> <a href="/blog/tags/%E6%91%84%E5%BD%B1/" style="font-size: 13.33px;">摄影</a> <a href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">服务器</a> <a href="/blog/tags/%E6%B6%88%E8%B4%B9%E7%94%B5%E5%AD%90/" style="font-size: 13.33px;">消费电子</a> <a href="/blog/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 13.33px;">电影</a> <a href="/blog/tags/%E7%A4%BE%E4%BA%A4/" style="font-size: 13.33px;">社交</a> <a href="/blog/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93/" style="font-size: 10px;">社交媒体</a> <a href="/blog/tags/%E7%A4%BE%E4%BC%9A/" style="font-size: 16.67px;">社会</a> <a href="/blog/tags/%E7%A7%91%E6%8A%80/" style="font-size: 20px;">科技</a> <a href="/blog/tags/%E7%BB%B4%E6%8A%A4/" style="font-size: 10px;">维护</a> <a href="/blog/tags/%E8%8B%B9%E6%9E%9C/" style="font-size: 16.67px;">苹果</a> <a href="/blog/tags/%E8%AF%84%E6%B5%8B/" style="font-size: 10px;">评测</a> <a href="/blog/tags/%E8%B7%A8%E6%80%A7%E5%88%AB/" style="font-size: 10px;">跨性别</a> <a href="/blog/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 16.67px;">软件</a> <a href="/blog/tags/%E8%BF%90%E5%8A%A8%E7%9B%B8%E6%9C%BA/" style="font-size: 10px;">运动相机</a> <a href="/blog/tags/%E9%AB%98%E8%80%83/" style="font-size: 10px;">高考</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/12/04/2024.12.HDR%E6%8E%A2%E7%B4%A2/">2024.12 HDR 照片兼容性探索</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/19/Oppo%20Find%20X7%20Ultra%20%E5%BD%B1%E5%83%8F%E7%AE%80%E8%AF%84/">OPPO Find X7 Ultra 影像简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/24/%E5%B0%8F%E7%B1%B37%E6%9C%88%E6%96%B0%E5%93%81%E7%AE%80%E8%AF%84/">小米2024年7月发布会新品简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%20%E3%80%8A%E9%BB%98%E6%9D%80%E3%80%8B%20%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/07/16/%E7%94%B5%E5%BD%B1%E3%80%8A%E6%8A%93%E5%A8%83%E5%A8%83%E3%80%8B%E7%AE%80%E8%AF%84/">电影《抓娃娃》简评</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 AngelAme<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
